@@ -3,7 +3,7 @@
 ## 👋 Introduction  
 Hello! I’m **Jayden Yu**, a **Data enthusiast** with expertise in:  
 - **Tools:** SQL, Python (Pandas, NumPy), Tableau, Excel  
-- **Skills:** Visualization, Statistical Analysis  
+- **Skills:** Statistical Analysis, Visualization
 - **Background:** [Briefly mention education/certifications]  
 
 🔗 **Connect with me:**  
