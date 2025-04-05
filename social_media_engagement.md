@@ -21,7 +21,7 @@ https://www.kaggle.com/datasets/abdullah0a/social-media-sentiment-analysis-datas
 
 This dataset is able to help me answer a few of the questions above.
 
-1. What type of content (videos, images, text posts, polls, stories) drives the most engagement on each platform?
+**1. What type of content (videos, images, text posts, polls, stories) drives the most engagement on each platform?**
 
 **SQL query:**\
 SELECT `Post Type`, SUM(`Number of Likes`) AS `Total Likes`, SUM(`Number of Shares`) AS `Total Shares`, SUM(`Number of Comments`) AS `Total Comments` FROM synthetic_social_media_data
@@ -34,7 +34,7 @@ Image posts will yield the most likes and shares, and video posts will yield the
 **Action:**\
 As a social media manager, I will avoid posting text only posts and try to post more images and videos to increase likes, shares, and comments.
 
-2. When is the best time to post on each platform to maximize likes?
+**2. When is the best time to post on each platform to maximize likes?**
 
 **SQL query:**\
 SELECT PostHour, SUM(`Number of Likes`) AS TotalLikes
