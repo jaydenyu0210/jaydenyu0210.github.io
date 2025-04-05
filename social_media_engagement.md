@@ -1,6 +1,6 @@
 # Social Media Engagement
 
-I pretend myself as the advertisement department of some products or service. I would like to analyze on user engagement patterns in social media, so that it can help improve the social media advertisement effect.
+I pretend myself as the social media manager of a product or service. I would like to analyze on user engagement patterns in social media, so that it can help improve the social media advertisement effect.
 
 Below are some questions that I came up with:
 
@@ -23,11 +23,32 @@ This dataset is able to help me answer a few of the questions above.
 
 1. What type of content (videos, images, text posts, polls, stories) drives the most engagement on each platform?
 
-SQL query:
+**SQL query:**\
 SELECT `Post Type`, SUM(`Number of Likes`) AS `Total Likes`, SUM(`Number of Shares`) AS `Total Shares`, SUM(`Number of Comments`) AS `Total Comments` FROM synthetic_social_media_data
 GROUP BY `Post Type`;
 
-Result:
-(contentPerformance.png)
+**Result:**\
+![contentPerformance](contentPerformance.png)\
+Image posts will yield the most likes and shares, and video posts will yield the most comments.
 
-3. When is the best time to post on each platform to maximize likes, shares, and comments?
+**Action:**\
+As a social media manager, I will avoid posting text only posts and try to post more images and videos to increase likes, shares, and comments.
+
+2. When is the best time to post on each platform to maximize likes?
+**SQL query:**\
+SELECT PostHour, SUM(`Number of Likes`) AS TotalLikes
+FROM (
+	SELECT
+		DATE_FORMAT(`Post Date and Time`, '%H') AS PostHour, `Number of Likes`
+	FROM synthetic_social_media_data
+) AS SUBQUERY
+GROUP BY PostHour
+ORDER BY PostHour;
+
+**Visulization:**\
+![totalLikesByHour](totalLikesByHour.png)
+
+From the bar graph, the hours that have relatively high number of likes are 10am, 12pm, 7pm, and 9pm. The hors that have relatively low number of likes are 8am, 10pm, 5pm, and 8pm
+
+**Action:**\
+As a social media manager, I will create social media post on the peak hours and aovid doing it on the low hours.
