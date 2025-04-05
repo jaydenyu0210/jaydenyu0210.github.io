@@ -35,6 +35,7 @@ Image posts will yield the most likes and shares, and video posts will yield the
 As a social media manager, I will avoid posting text only posts and try to post more images and videos to increase likes, shares, and comments.
 
 2. When is the best time to post on each platform to maximize likes?
+
 **SQL query:**\
 SELECT PostHour, SUM(`Number of Likes`) AS TotalLikes
 FROM (
