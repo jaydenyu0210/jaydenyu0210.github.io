@@ -7,7 +7,8 @@ Hello! I’m **Jayden Yu**, a **Data Analysis enthusiast** with expertise in:
 - **Background:** Graduated at UC Santa Barbara with a Computer Engineering Bachelors Degree in 2022.
 
 🔗 **Connect with me:**  
-[![Email](https://img.shields.io/badge/Email-D14836?style=flat&logo=gmail&logoColor=white)](mailto:jiaweiyu2009@gmail.com)  [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jaydenyu0210/) 
+Email: jiaweiyu2009@gmail.com\
+LinkedIn: https://www.linkedin.com/in/jaydenyu0210/
 ---
 
 ## 📂 Projects
