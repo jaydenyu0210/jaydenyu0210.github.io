@@ -28,6 +28,6 @@ SELECT `Post Type`, SUM(`Number of Likes`) AS `Total Likes`, SUM(`Number of Shar
 GROUP BY `Post Type`;
 
 Result:
-
+(contentPerformance.png)
 
 3. When is the best time to post on each platform to maximize likes, shares, and comments?
