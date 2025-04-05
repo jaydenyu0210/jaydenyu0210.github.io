@@ -16,7 +16,7 @@ Hello! I’m **Jayden Yu**, a **Data enthusiast** with expertise in:
 
 | Project | Preview | Description |  
 |---------|---------|-------------|  
-| **[🔍Social Media Engagement Analysis](projects/socail_media_engagement.md)** | | Analyzed social media engagement patterns. |  
+| **[🔍Social Media Engagement Analysis](socail_media_engagement.md)** | | Analyzed social media engagement patterns. |  
 
 
 *(Replace placeholders with real images and links!)*  
