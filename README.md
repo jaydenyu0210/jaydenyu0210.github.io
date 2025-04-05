@@ -1,7 +1,7 @@
 # 📊 Jayden Yu - Portfolio  
 
 ## 👋 Introduction  
-Hello! I’m **Jayden Yu**, a **Data enthusiast** with expertise in:  
+Hello! I’m **Jayden Yu**, a **Data Analysis enthusiast** with expertise in:  
 - **Tools:** SQL, Excel, Tableau, python
 - **Skills:** Statistical Analysis, Visualization
 - **Background:** Graduated at UC Santa Barbara with a Computer Engineering Bachelors Degree in 2022.
