@@ -3,7 +3,7 @@
 ## 👋 Introduction  
 Hello! I’m **Jayden Yu**, a **Data enthusiast** with expertise in:  
 - **Tools:** SQL, Python (Pandas, NumPy), Tableau, Excel  
-- **Skills:** Data Cleaning, Visualization, Statistical Analysis  
+- **Skills:** Visualization, Statistical Analysis  
 - **Background:** [Briefly mention education/certifications]  
 
 🔗 **Connect with me:**  
@@ -16,7 +16,7 @@ Hello! I’m **Jayden Yu**, a **Data enthusiast** with expertise in:
 
 | Project | Preview | Description |  
 |---------|---------|-------------|  
-| **[🔍 Project 1: Sales Dashboard](projects/project1.md)** | ![Sales Dashboard](https://via.placeholder.com/150) | Analyzed sales trends using Tableau. |  
+| **[🔍Social Media Engagement Analysis](projects/socail_media_engagement.md)** | | Analyzed social media engagement patterns. |  
 
 
 *(Replace placeholders with real images and links!)*  
