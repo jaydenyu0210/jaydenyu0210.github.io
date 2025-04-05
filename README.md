@@ -8,7 +8,7 @@ Hello! I’m **Jayden Yu**, a **Data Analysis enthusiast** with expertise in:
 
 🔗 **Connect with me:**  
 **Email:** jiaweiyu2009@gmail.com\
-**LinkedIn:** https://www.linkedin.com/in/jaydenyu0210/\
+**LinkedIn:** https://www.linkedin.com/in/jaydenyu0210\
 ---
 
 ## 📂 Projects
