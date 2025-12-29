@@ -1,5 +1,5 @@
 # Jayden Yu - Portfolio  
- <img src="profilepic.jpeg" style="width:150px;" />  
+ <img src="profilepic.jpeg" style="width:200px;" />  
 
 
 ## Introduction  
