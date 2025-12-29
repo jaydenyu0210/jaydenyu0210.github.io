@@ -13,4 +13,4 @@ Hello! I’m **Jayden Yu**, I build AI Saas products
 
 **Connect with me:**  
 **Email:** jiaweiyu2009@gmail.com\
-**LinkedIn:** [Linkedin](https://www.linkedin.com/in/jaydenyu0210\)
+**LinkedIn:** [Linkedin](https://www.linkedin.com/in/jaydenyu0210)
