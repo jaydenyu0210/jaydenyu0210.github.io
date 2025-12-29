@@ -2,7 +2,7 @@
 
 
 ## Introduction  
-Hello! I’m **Jayden Yu**, I build AI Saas products                <img src="profilepic.png" style="width:100px;" />
+Hello! I’m **Jayden Yu**, I build AI Saas products                <img src="profilepic.jpeg" style="width:100px;" />
 
 
 ## Live products:
