@@ -1,8 +1,9 @@
 # Jayden Yu - Portfolio  
+ <img src="profilepic.jpeg" style="width:150px;" />  
 
 
 ## Introduction  
-Hello! I’m **Jayden Yu**, I build AI Saas products             <img src="profilepic.jpeg" style="width:200px;" />          
+Hello! I’m **Jayden Yu**, I build AI Saas products          
 
 
 ## Live products:
