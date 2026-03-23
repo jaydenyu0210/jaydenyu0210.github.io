@@ -17,7 +17,7 @@ Hello! I’m **Jayden Yu**, I build AI Saas products
 - Designed an automated live-transcription and insights pipeline that streams continuous audio to OpenAI Whisper, utilizing GPT for real-time context analysis to dynamically detect Q&A, extract action items, and distribute comprehensive meeting summaries.
 
 
-### [iNurra](https://devpost.com/software/inura/)
+### [iNurra](https://apps.apple.com/us/app/inurra/id6758828697)
 - Built a production-ready mobile application with React Native and Supabase, implementing secure data storage, real-time updates, and an intuitive UI tailored for accessibility by non-technical elderly users. 
 - Designed a computer vision and natural language processing flow using Google Gemini capable of parsing messy, real-world photos into structured, actionable health data for automated care team alerts.
 
