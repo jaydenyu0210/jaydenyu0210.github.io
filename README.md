@@ -23,10 +23,6 @@ latency interactions and progressive disclosure of AI content.
 medication decoder, and photo-based symptom tracker—directly targeting the 30-day hospital readmission gap for elderly
 patients.
 
-### [KOL Monitor Pro](https://kol-monitor-two.vercel.app) - [github](https://github.com/jaydenyu0210/kol-monitor)
-- An end-to-end KOL intelligence platform that helps growth marketers monitor, engage, and convert high-signal voices across X.
-Defined core journeys for KOL discovery, real-time activity tracking, automated DM outreach, and AI-assisted post generation —
-and translated dense scraped data into an actionable dashboard of interaction feeds, engagement charts, and activity heatmaps
 
 
 **Connect with me:**  
