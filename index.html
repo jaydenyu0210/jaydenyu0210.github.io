@@ -244,6 +244,125 @@
   .footer-social a { transition: color 0.25s; }
   .footer-social a:hover { color: var(--accent); }
 
+  /* ---------- tools trigger ---------- */
+  .tools-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+    padding: 7px 14px;
+    border: 1px solid var(--hairline);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--ink-soft);
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color 0.25s, border-color 0.25s, background 0.25s;
+  }
+  .tools-btn::before {
+    content: "";
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--accent);
+    opacity: 0.75;
+  }
+  .tools-btn:hover {
+    color: var(--ink);
+    border-color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 8%, transparent);
+  }
+  .tools-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  /* ---------- modal ---------- */
+  .modal {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .modal.open { display: flex; }
+  .modal-scrim {
+    position: absolute;
+    inset: 0;
+    background: rgba(19, 19, 17, 0.42);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    animation: fade 0.3s var(--ease) forwards;
+  }
+  @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+  .modal-card {
+    position: relative;
+    background: var(--paper);
+    border: 1px solid var(--hairline);
+    border-radius: 6px;
+    box-shadow: 0 40px 80px -30px rgba(19, 19, 17, 0.5);
+    width: min(720px, 100%);
+    max-height: min(80vh, 760px);
+    overflow-y: auto;
+    padding: clamp(26px, 4vw, 40px);
+    animation: pop 0.4s var(--ease) forwards;
+  }
+  @keyframes pop {
+    from { opacity: 0; transform: translateY(18px) scale(0.985); }
+    to { opacity: 1; transform: none; }
+  }
+  .modal-kicker {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  .modal-title {
+    font-family: var(--serif);
+    font-size: clamp(28px, 4vw, 42px);
+    line-height: 1.1;
+    margin: 6px 0 4px;
+  }
+  .modal-close {
+    position: absolute;
+    top: 16px; right: 18px;
+    background: none;
+    border: none;
+    font-family: var(--serif);
+    font-size: 26px;
+    line-height: 1;
+    color: var(--ink-faint);
+    cursor: pointer;
+    transition: color 0.25s, transform 0.3s var(--ease);
+  }
+  .modal-close:hover { color: var(--accent); transform: rotate(90deg); }
+  .tool-group { margin-top: 26px; }
+  .tool-group h4 {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--hairline);
+    margin-bottom: 12px;
+  }
+  .tool-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tool-chip {
+    font-size: 14px;
+    line-height: 1.2;
+    padding: 6px 12px;
+    border: 1px solid var(--hairline);
+    border-radius: 999px;
+    color: var(--ink-soft);
+    background: #fff;
+  }
+  body.locked { overflow: hidden; }
+
   /* scroll reveal */
   .reveal {
     opacity: 0;
@@ -283,13 +402,14 @@
     <p class="rise" style="animation-delay:0.1s">I build <em>AI products</em> from scratch that actually help people.</p>
   </div>
 
-  <a class="project rise" style="animation-delay:0.3s" href="https://wellbeingABC.com" target="_blank" rel="noopener">
+  <a class="project rise" style="animation-delay:0.3s" href="https://easy2gift.co" target="_blank" rel="noopener">
     <div class="project-row">
-      <img class="project-icon" src="assets/wellbeing.png" alt="wellbeingABC goose logo">
+      <img class="project-icon" src="assets/easy2gift.png" alt="easy2gift app icon">
       <div>
         <span class="project-num">01</span>
-        <span class="project-title">wellbeingABC.com</span>
-        <p class="project-desc">A dual-sided coaching marketplace connecting clients with trained coaches for their wellness goals — role-based dashboards, real-time chat, personal journaling, and clinically-informed self-assessments.</p>
+        <span class="project-title">easy2gift.co</span>
+        <p class="project-desc">Gift discovery, minus the browsing. Tell it who you're shopping for and it turns that into real, in-stock gift ideas you can buy in one click — with curated guides across toys, tech, books, and more.</p>
+        <button type="button" class="tools-btn" data-tools="easy2gift">Tools used</button>
       </div>
       <span class="project-arrow">→</span>
     </div>
@@ -302,18 +422,20 @@
         <span class="project-num">02</span>
         <span class="project-title">iNurra</span>
         <p class="project-desc">An AI-powered post-discharge care app for elderly patients — a visual cognitive calendar, medication decoder, and symptom tracker built to close the 30-day hospital readmission gap.</p>
+        <button type="button" class="tools-btn" data-tools="inurra">Tools used</button>
       </div>
       <span class="project-arrow">→</span>
     </div>
   </a>
 
-  <a class="project rise" style="animation-delay:0.5s" href="https://easy2gift.co" target="_blank" rel="noopener">
+  <a class="project rise" style="animation-delay:0.5s" href="https://wellbeingABC.com" target="_blank" rel="noopener">
     <div class="project-row">
-      <img class="project-icon" src="assets/easy2gift.png" alt="easy2gift app icon">
+      <img class="project-icon" src="assets/wellbeing.png" alt="wellbeingABC goose logo">
       <div>
         <span class="project-num">03</span>
-        <span class="project-title">easy2gift.co</span>
-        <p class="project-desc">Gift discovery, minus the browsing. Tell it who you're shopping for and it turns that into real, in-stock gift ideas you can buy in one click — with curated guides across toys, tech, books, and more.</p>
+        <span class="project-title">wellbeingABC.com</span>
+        <p class="project-desc">A dual-sided coaching marketplace connecting clients with trained coaches for their wellness goals — role-based dashboards, real-time chat, personal journaling, and clinically-informed self-assessments.</p>
+        <button type="button" class="tools-btn" data-tools="wellbeing">Tools used</button>
       </div>
       <span class="project-arrow">→</span>
     </div>
@@ -326,6 +448,7 @@
         <span class="project-num">04</span>
         <span class="project-title">tomatomeet.com</span>
         <p class="project-desc">No-login WebRTC video conferencing with real-time transcription, GPT-4 meeting insights, and automated email recaps — join a call, leave with the notes already written.</p>
+        <button type="button" class="tools-btn" data-tools="tomatomeet">Tools used</button>
       </div>
       <span class="project-arrow">→</span>
     </div>
@@ -346,7 +469,98 @@
   </div>
 </footer>
 
+<div class="modal" id="toolsModal" role="dialog" aria-modal="true" aria-labelledby="toolsTitle">
+  <div class="modal-scrim" data-close></div>
+  <div class="modal-card">
+    <button class="modal-close" type="button" data-close aria-label="Close">×</button>
+    <span class="modal-kicker">Tools used</span>
+    <h3 class="modal-title" id="toolsTitle"></h3>
+    <div id="toolsBody"></div>
+  </div>
+</div>
+
 <script>
+  const TOOLS = {
+    wellbeing: {
+      title: "wellbeingABC.com",
+      groups: [
+        ["Frontend", ["Next.js 14 (App Router)", "React 18", "TypeScript", "Tailwind CSS", "shadcn/ui", "Radix UI", "Recharts", "Tiptap", "React Hook Form", "Zod", "Lucide"]],
+        ["Backend & data", ["Node.js", "Express", "Supabase Postgres", "Supabase Auth", "Supabase Storage", "Supabase Realtime", "Row Level Security", "Nodemailer", "PDFKit / jsPDF"]],
+        ["Payments", ["Stripe Checkout", "Stripe Connect"]],
+        ["Infrastructure", ["Vercel", "AWS EC2", "Docker", "nginx", "PM2"]],
+        ["Also", ["WeChat Mini Program", "Vitest", "ESLint", "i18n (EN / 中文)", "Claude Code"]]
+      ]
+    },
+    inurra: {
+      title: "iNurra",
+      groups: [
+        ["Mobile app", ["React Native", "Expo", "Expo Router", "EAS Build", "TypeScript", "React Navigation", "React Native Paper", "Reanimated", "Victory Native", "react-native-calendars", "Zustand", "TanStack Query", "React Hook Form", "Zod"]],
+        ["AI", ["Google Gemini 2.0 Flash", "OCR document extraction", "RAG chat over documents", "Image analysis", "Audio transcription", "Text-to-speech"]],
+        ["Backend & data", ["Supabase Postgres", "Supabase Auth (phone / OTP)", "Supabase Storage", "Supabase Edge Functions (Deno)", "Row Level Security"]],
+        ["Java service", ["Java", "Spring Boot", "Spring AI (Google GenAI)", "Spring Data JPA", "OAuth2 Resource Server", "PostgreSQL", "Maven"]],
+        ["Ship", ["Apple App Store", "Claude Code"]]
+      ]
+    },
+    easy2gift: {
+      title: "easy2gift.co",
+      groups: [
+        ["Frontend", ["Next.js 14 (App Router)", "React 18", "TypeScript"]],
+        ["AI", ["Google Gemini API", "Suno (AI background music for Instagram ads)", "Adobe Firefly (ad images & video)"]],
+        ["Product sourcing", ["Amazon", "Etsy API", "eBay API", "ScraperAPI", "Cheerio"]],
+        ["Monetization", ["Amazon Associates", "Skimlinks", "Impact.com"]],
+        ["Infrastructure", ["Vercel", "Node.js", "Claude Code"]]
+      ]
+    },
+    tomatomeet: {
+      title: "tomatomeet.com",
+      groups: [
+        ["Frontend", ["Next.js 15 (App Router)", "React 19", "TypeScript", "Tailwind CSS", "Framer Motion", "Geist", "Lucide", "Vercel Analytics"]],
+        ["Real-time video", ["WebRTC", "mediasoup SFU", "mediasoup-client", "Socket.IO"]],
+        ["Backend & data", ["Node.js", "Express", "Prisma", "PostgreSQL"]],
+        ["AI & email", ["OpenAI GPT-4", "GPT-4o mini", "Live transcription", "Resend"]],
+        ["Infrastructure", ["Turborepo", "npm workspaces", "Vercel", "nginx", "Claude Code"]]
+      ]
+    }
+  };
+
+  const modal = document.getElementById("toolsModal");
+  const modalTitle = document.getElementById("toolsTitle");
+  const modalBody = document.getElementById("toolsBody");
+  let lastTrigger = null;
+
+  function openTools(key, trigger) {
+    const data = TOOLS[key];
+    if (!data) return;
+    lastTrigger = trigger;
+    modalTitle.textContent = data.title;
+    modalBody.innerHTML = data.groups.map(([label, items]) => `
+      <div class="tool-group">
+        <h4>${label}</h4>
+        <div class="tool-chips">${items.map((t) => `<span class="tool-chip">${t}</span>`).join("")}</div>
+      </div>`).join("");
+    modal.classList.add("open");
+    document.body.classList.add("locked");
+    modal.querySelector(".modal-close").focus();
+  }
+
+  function closeTools() {
+    modal.classList.remove("open");
+    document.body.classList.remove("locked");
+    if (lastTrigger) lastTrigger.focus();
+  }
+
+  document.querySelectorAll(".tools-btn").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      openTools(btn.dataset.tools, btn);
+    });
+  });
+  modal.querySelectorAll("[data-close]").forEach((el) => el.addEventListener("click", closeTools));
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal.classList.contains("open")) closeTools();
+  });
+
   const io = new IntersectionObserver((entries) => {
     entries.forEach((e) => {
       if (e.isIntersecting) {
