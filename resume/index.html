@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Resume — Jayden Yu</title>
-<meta name="description" content="Jayden Yu&#x27;s resume — four years of software quality assurance at Internet Brands, and three products designed, built and shipped solo.">
+<meta name="description" content="Jayden Yu, UX and product designer. Two shipped consumer products, four years owning quality for consumer software, and a practice built on prototyping in real code.">
 <link rel="canonical" href="https://jaydenyu0210.github.io/resume/">
 <meta property="og:title" content="Resume — Jayden Yu">
-<meta property="og:description" content="Jayden Yu&#x27;s resume — four years of software quality assurance at Internet Brands, and three products designed, built and shipped solo.">
+<meta property="og:description" content="Jayden Yu, UX and product designer. Two shipped consumer products, four years owning quality for consumer software, and a practice built on prototyping in real code.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://jaydenyu0210.github.io/resume/">
 <meta property="og:image" content="https://jaydenyu0210.github.io/assets/portrait-800.jpg">
@@ -36,12 +36,59 @@
 
   <section class="container page-head">
     <div class="page-head-row">
+      <p class="print-name">Jayden Yu</p>
       <h1 class="reveal">Resume.</h1>
       <button class="btn btn-print reveal" data-delay="1" type="button" onclick="window.print()"><span>Save as PDF</span></button>
     </div>
+    <p class="resume-role reveal">UX &amp; Product Designer</p>
+    <div class="resume-summary measure reveal" data-delay="1">
+        <p>I design consumer products and take them from nothing to shipped. Two of them are live: an iOS app for people managing care at home, and a bilingual coaching marketplace with payments and payouts. I did the research, the flows, the interface and the build on both.</p>
+        <p>Before that I spent four years owning quality for two consumer products at Internet Brands. That is where my design judgment comes from. Products rarely fail at the edges. They fail at the ordinary step someone cannot get past.</p>
+        <p>I work by research, flows and a prototype in production code, tested on a real device. Trilingual in English, Mandarin and Cantonese.</p>
+    </div>
+    <p class="resume-contact reveal" data-delay="2">
+      <a href="mailto:jiaweiyu2009@gmail.com">jiaweiyu2009@gmail.com</a> &nbsp;·&nbsp;
+      <a href="https://jaydenyu0210.github.io">jaydenyu0210.github.io</a> &nbsp;·&nbsp;
+      <a href="https://www.linkedin.com/in/jaydenyu0210" rel="me noopener" target="_blank">linkedin.com/in/jaydenyu0210</a> &nbsp;·&nbsp;
+      Los Angeles, CA
+    </p>
   </section>
 
-  <section class="container">
+  <section class="container" >
+    <hr class="rule reveal">
+    <h2 class="section-label reveal">Selected work</h2>
+    <hr class="rule reveal">
+      <article class="grid entry">
+        <div class="col-6 reveal">
+          <h3 class="entry-role">iNurra</h3>
+          <p class="entry-meta">Post-discharge care app &nbsp;·&nbsp; Live on the App Store &nbsp;·&nbsp; React Native, Supabase, Google Gemini</p>
+        </div>
+        <div class="col-6 entry-body reveal" data-delay="1">
+          <p>Designed and shipped an iOS app that turns a photo of discharge paperwork, a pill bottle or a home monitor into a plain-language care plan: medicines explained, doses on a calendar, readings with their normal ranges.</p>
+          <p>Made the core call that nothing the app reads from a photo is saved until the person confirms it, card by card. It cost the effortless demo. It is also why a wrong dose gets caught on screen instead of landing silently in someone&#x27;s calendar.</p>
+          <p>Ran usability sessions with people recently home from hospital and with family caregivers, then acted on what they missed. A review screen people scrolled straight past became a short summary followed by one card per item.</p>
+          <p>Cut a custom measuring camera the day I built it, after it gave two different sizes for the same mark. Replaced millimeters with four words a patient can act on: initial, improving, worsening, no change.</p>
+          <p>Owned the whole path alone — research, flows, interface, the words on screen, the build and App Store submission. Designed and built solo, and AI-paired throughout with Claude Code.</p>
+          <p><a href="/work/inurra/">Read the case study &rarr;</a></p>
+        </div>
+      </article>
+      <article class="grid entry">
+        <div class="col-6 reveal">
+          <h3 class="entry-role">wellbeingABC.com</h3>
+          <p class="entry-meta">Bilingual two-sided marketplace, EN and 中文 &nbsp;·&nbsp; Live &nbsp;·&nbsp; Next.js, TypeScript, Supabase, Stripe</p>
+        </div>
+        <div class="col-6 entry-body reveal" data-delay="1">
+          <p>Designed and built a coaching marketplace where anyone can take a self-assessment and book a session without making an account, in English or Chinese.</p>
+          <p>Treated guests as customers rather than an edge case. A booking works with a name and an email, and an assessment result stays on the person&#x27;s own phone until they choose to create an account.</p>
+          <p>Held payment until the buyer confirms the session happened, since sessions occur off the platform and nothing the system can see proves one took place. The cost is a wait for coaches whose buyers forget.</p>
+          <p>Removed three separate questions asking coaches which language they work in, after watching them write in Chinese and then tick English. The product now reads the language from what they already wrote.</p>
+          <p>Localized at the content level rather than the chrome: every assessment question and every answer option ships in both languages. Designed and built solo, and AI-paired throughout with Claude Code.</p>
+          <p><a href="/work/wellbeingabc/">Read the case study &rarr;</a></p>
+        </div>
+      </article>
+  </section>
+
+  <section class="container" style="padding-top:var(--s-10)">
     <hr class="rule reveal">
     <h2 class="section-label reveal">Experience</h2>
     <hr class="rule reveal">
@@ -51,9 +98,8 @@
           <p class="entry-meta">Panda Enterprises Inc., El Monte, CA &nbsp;·&nbsp; Sep 2025 — Present</p>
         </div>
         <div class="col-6 entry-body reveal" data-delay="1">
-          <p>Own end-to-end operational workflows for ocean export shipments, handling urgent schedule changes and competing priorities as they come up.</p>
-          <p>Coordinate truckers, ocean carriers, shippers, vendors and overseas partners, and prepare high volume shipping and compliance documentation accurately under strict deadlines.</p>
-          <p>Communicate daily in English, Mandarin and Cantonese across internal teams and external partners.</p>
+          <p>Own end-to-end operational workflows for ocean export shipments, coordinating truckers, carriers, shippers and overseas partners against hard deadlines.</p>
+          <p>Work daily in English, Mandarin and Cantonese across internal teams and external partners.</p>
         </div>
       </article>
       <article class="grid entry">
@@ -62,62 +108,53 @@
           <p class="entry-meta">Internet Brands, El Segundo, CA &nbsp;·&nbsp; Aug 2021 — Sep 2025</p>
         </div>
         <div class="col-6 entry-body reveal" data-delay="1">
-          <p>Owned quality for Nolo.com, a customer-facing web application, and WillMaker, a desktop application, from test planning and case design through release readiness.</p>
-          <p>Ran manual, exploratory, functional, regression, integration, system and acceptance testing ahead of each release, and reported quality metrics and open risk into go or no-go decisions.</p>
-          <p>Built and maintained automated test suites in Playwright, Selenium, pytest and Robot Framework, structured behind a Page Object Model and integrated into CI/CD pipelines on GitHub Actions.</p>
-          <p>Tested REST APIs with Postman and validated backend behavior with SQL, confirming records stayed accurate and complete across integration points.</p>
-          <p>Managed the defect lifecycle in Jira and YouTrack with clear reproduction, severity and impact detail, drove root-cause analysis, and tracked issues through to resolution.</p>
-          <p>Worked in Agile/Scrum with developers, product and design, and used TestRail for test management and BrowserStack for cross-browser and cross-platform coverage.</p>
+          <p>Owned quality for Nolo.com, a consumer web product, and WillMaker, a desktop product, from planning through release. Four years of watching ordinary people try to finish legal tasks under stress, and of finding where they stopped.</p>
+          <p>Reported open risk into go or no-go release decisions: what should ship, what should wait, and where the cost of a rough edge landed on the user rather than on us.</p>
+          <p>Worked release by release with product, design and engineering in Agile. Wrote reproductions a designer could read, describing what the person was trying to do and where the product lost them.</p>
+          <p>This is where my design judgment comes from. Products rarely fail at the edges. They fail at the ordinary step someone cannot get past.</p>
         </div>
       </article>
   </section>
 
   <section class="container" style="padding-top:var(--s-10)">
     <hr class="rule reveal">
-    <h2 class="section-label reveal">Products I designed and built</h2>
+    <h2 class="section-label reveal">Skills</h2>
     <hr class="rule reveal">
-      <article class="grid entry">
+      <div class="grid entry">
         <div class="col-6 reveal">
-          <h3 class="entry-role">iNurra</h3>
-          <p class="entry-meta">AI post-discharge care app, shipped to the App Store &nbsp;·&nbsp; React Native, Expo, Supabase, Spring Boot</p>
+          <h3 class="entry-role">What I work with</h3>
+          <p class="entry-meta">UX, product, and enough engineering to ship</p>
         </div>
-        <div class="col-6 entry-body reveal" data-delay="1">
-          <p>Designed and shipped an iOS app that turns photographed medical documents into structured medications, appointments, health metrics and care tasks, owning the full path from concept through store submission.</p>
-          <p>Constrained model extraction to fixed schemas so malformed output fails visibly, with a mandatory human review step where every generated record is confirmed or corrected before it is written to the database.</p>
-          <p>Architected the backend on PostgreSQL with versioned migrations, per-operation row-level access policies, vector similarity search and scheduled event generation.</p>
-          <p>Built a Spring Boot service with token issuer and audience validation, ownership-scoped lookups and a centralized error contract, covered by an automated suite that runs fully offline.</p>
-          <p><a href="/work/inurra/">Read the case study &rarr;</a></p>
+        <dl class="col-6 entry-body reveal" data-delay="1">
+        <div class="skill-group">
+          <dt>UX &amp; product</dt>
+          <dd>User research, interviewing, usability testing, problem framing, user flows, information architecture, UX writing, scoping and prioritization, PRDs, user stories, acceptance criteria, accessibility, bilingual and localized design</dd>
         </div>
-      </article>
-      <article class="grid entry">
-        <div class="col-6 reveal">
-          <h3 class="entry-role">wellbeingABC.com</h3>
-          <p class="entry-meta">Bilingual two-sided marketplace with payments and payouts &nbsp;·&nbsp; Next.js, TypeScript, PostgreSQL, Stripe</p>
+        <div class="skill-group">
+          <dt>How I work</dt>
+          <dd>Research &rarr; flows &rarr; a working prototype in production code &rarr; test it on a real device &rarr; iterate. The prototype is the deliverable, not a mockup of one.</dd>
         </div>
-        <div class="col-6 entry-body reveal" data-delay="1">
-          <p>Built a full-stack marketplace covering registration and roles, listings, availability scheduling, booking, payments, payouts, a wallet ledger, withdrawals, refunds and an admin console.</p>
-          <p>Made the money path correct under retries and races by design: server side price re-validation, database status guards and compare-and-swap accounting, an idempotent payment webhook consumer, and named reconciliation codes each paired with a documented remedy.</p>
-          <p>Wrote the automated test suite with dedicated coverage for payment, wallet and checkout correctness, spanning concurrent approval races, retry exhaustion, refund rollback and duplicate delivery idempotency.</p>
-          <p>Delivered full English and Chinese localization with server side locale resolution, and shipped a grounded AI assistant with rate limiting and a graceful degraded response.</p>
-          <p><a href="/work/wellbeingabc/">Read the case study &rarr;</a></p>
+        <div class="skill-group">
+          <dt>Design systems</dt>
+          <dd>Worked within Material 3 and ShadCN. Maintained color, type and spacing tokens across a product rather than designing bespoke visual identities.</dd>
         </div>
-      </article>
-      <article class="grid entry">
-        <div class="col-6 reveal">
-          <h3 class="entry-role">ArchSpace</h3>
-          <p class="entry-meta">Open-source node-based workflow desktop app &nbsp;·&nbsp; TypeScript monorepo, Electron, React</p>
+        <div class="skill-group">
+          <dt>Tools</dt>
+          <dd>Claude Code, Codex, Cursor, Jira, Postman, TestFlight, Git</dd>
         </div>
-        <div class="col-6 entry-body reveal" data-delay="1">
-          <p>Architected a demand-driven, memoized execution engine with content-addressed cache keys, laned concurrency, cancellation, retry classification for transient errors only, and partial-failure isolation.</p>
-          <p>Built out-of-process plugin isolation with manifest-declared permissions and install-time consent, shipping the first-party plugin through the same loader a third-party plugin uses.</p>
-          <p>Built the test suite and CI gate ending in an end-to-end run across every shipped example workflow, plus a launch smoke test on the packaged app and a deterministic scheduler mode that makes concurrency testable rather than flaky.</p>
-          <p>Maintained a public status ledger classifying every capability as real, placeholder or absent, under a standing rule that an unimplemented feature is never presented to a user as working.</p>
-          <p><a href="https://github.com/jaydenyu0210/archspace" target="_blank" rel="noopener">View on GitHub &rarr;</a></p>
+        <div class="skill-group">
+          <dt>Technical</dt>
+          <dd>React Native, Next.js, React, TypeScript, PostgreSQL and Supabase &mdash; enough to build and ship what I design</dd>
         </div>
-      </article>
+        <div class="skill-group">
+          <dt>Languages</dt>
+          <dd>English, Mandarin and Cantonese</dd>
+        </div>
+        </dl>
+      </div>
   </section>
 
-  <section class="container" style="padding-top:var(--s-10)">
+  <section class="container" style="padding-top:var(--s-10);padding-bottom:var(--s-12)">
     <hr class="rule reveal">
     <h2 class="section-label reveal">Education</h2>
     <hr class="rule reveal">
@@ -130,48 +167,6 @@
           <p>Coursework in software systems, algorithms, databases, networking and computer architecture, with software projects in Python, JavaScript and SQL.</p>
         </div>
       </article>
-  </section>
-
-  <section class="container" style="padding-top:var(--s-10);padding-bottom:var(--s-12)">
-    <hr class="rule reveal">
-    <h2 class="section-label reveal">Skills</h2>
-    <hr class="rule reveal">
-      <div class="grid entry">
-        <div class="col-6 reveal">
-          <h3 class="entry-role">What I work with</h3>
-          <p class="entry-meta">Design, product and engineering</p>
-        </div>
-        <dl class="col-6 entry-body reveal" data-delay="1">
-        <div class="skill-group">
-          <dt>Product &amp; design</dt>
-          <dd>Problem framing, product definition, PRD authoring, user stories, acceptance criteria, flows and information architecture, interface design, design systems and tokens, bilingual and localized design, accessibility considerations, release planning, cross-functional coordination</dd>
-        </div>
-        <div class="skill-group">
-          <dt>Testing &amp; QA</dt>
-          <dd>Test strategy, test planning, test-case design, manual, functional, exploratory, regression, integration, system and end-to-end testing, UAT, API testing, cross-browser and cross-platform testing, defect lifecycle management, defect triage, root-cause analysis, quality metrics</dd>
-        </div>
-        <div class="skill-group">
-          <dt>Automation &amp; CI/CD</dt>
-          <dd>Playwright, Selenium, pytest, Robot Framework, Vitest, Page Object Model, reusable automation frameworks, property-based testing, GitHub Actions, CI/CD pipelines, Git</dd>
-        </div>
-        <div class="skill-group">
-          <dt>Engineering</dt>
-          <dd>TypeScript, React, Next.js, React Native, Node.js, Electron, Spring Boot, REST API design, PostgreSQL, Supabase, database migrations, Row Level Security, OAuth 2.1 and JWT authentication, webhooks, Stripe, Tailwind CSS, Vercel</dd>
-        </div>
-        <div class="skill-group">
-          <dt>AI</dt>
-          <dd>LLM integration, Google Gemini, prompt engineering, structured output extraction, retrieval-augmented generation, semantic search, AI output validation, human-in-the-loop review</dd>
-        </div>
-        <div class="skill-group">
-          <dt>Languages</dt>
-          <dd>English, Mandarin and Cantonese &nbsp;·&nbsp; Python, JavaScript, SQL, HTML/CSS, C++</dd>
-        </div>
-        <div class="skill-group">
-          <dt>Tools</dt>
-          <dd>Jira, YouTrack, TestRail, BrowserStack, Postman</dd>
-        </div>
-        </dl>
-      </div>
   </section>
 
 </main>

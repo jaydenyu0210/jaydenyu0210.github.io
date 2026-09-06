@@ -336,6 +336,20 @@ em, i { font-style: italic; }
   gap: var(--s-8); flex-wrap: wrap;
 }
 
+.print-name { display: none; }
+.resume-role {
+  margin-top: var(--s-4);
+  font-size: var(--t-body-md); font-style: italic; line-height: 40px;
+}
+.resume-summary { margin-top: var(--s-4); }
+.resume-summary p { font-size: var(--t-body-sm); line-height: 27px; }
+.resume-summary p + p { margin-top: var(--s-3); }
+.resume-contact {
+  margin-top: var(--s-5);
+  font-size: var(--t-body-sm); line-height: 27px; color: var(--muted-strong);
+}
+.resume-contact a { color: var(--ink); }
+
 /* section label bracketed by two rules — the reference's table-header device */
 .section-label {
   font-size: var(--t-body); font-style: italic; font-weight: 400;
@@ -828,10 +842,57 @@ em, i { font-style: italic; }
    ========================================================================== */
 
 @media print {
-  .nav, .site-footer, .cursor, .btn { display: none !important; }
-  .js .reveal { opacity: 1 !important; transform: none !important; }
-  body { font-size: 11pt; }
-  .page-head h1 { font-size: 28pt; }
-  .entry { padding-top: 18pt; break-inside: avoid; }
+  /* The screen page is a wide, airy ledger. Printed as-is it runs six pages,
+     so the whole spacing scale is compressed and the type set to document size. */
+  :root {
+    --s-1: 2px;  --s-2: 3px;  --s-3: 6px;  --s-4: 8px;  --s-5: 10px;
+    --s-6: 12px; --s-7: 14px; --s-8: 0;    --s-9: 14px; --s-10: 12px;
+    --s-11: 12px; --s-12: 0;  --s-13: 0;
+    --t-body: 9.5pt; --t-body-sm: 9pt; --t-body-md: 11pt;
+    --t-heading: 11pt; --t-caption: 8pt;
+  }
+
+  .nav, .site-footer, .cursor, .btn, .skip-link { display: none !important; }
+  .js .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+
+  html, body { background: #fff; }
+  body { font-size: 9.5pt; line-height: 1.4; }
   .container { padding-inline: 0; max-width: none; }
+  .grid { gap: 14px; }
+
+  /* lead with the name, not with the word "Resume." */
+  .page-head h1 { display: none; }
+  .print-name {
+    display: block;
+    font-size: 19pt; font-weight: 700; line-height: 1.1; letter-spacing: -0.4px;
+  }
+  .page-head { padding-top: 0; }
+  .resume-role { margin-top: 2px; font-size: 11pt; line-height: 1.3; }
+  .resume-summary { margin-top: 8px; max-width: none; }
+  .resume-summary p { font-size: 9pt; line-height: 1.42; }
+  .resume-contact { margin-top: 8px; font-size: 8.5pt; color: #333; }
+  .resume-contact a { text-decoration: none; }
+
+  .rule { margin-block: 6px; background: #999; }
+  .section-label { font-size: 9pt; }
+
+  /* narrower label column, and never split an entry across pages */
+  .entry { padding-top: 12px; break-inside: avoid; page-break-inside: avoid; }
+  .entry > .col-6:first-child { grid-column: span 4; }
+  .entry > .col-6:last-child  { grid-column: span 8; }
+  .entry-role { font-size: 11pt; line-height: 1.25; }
+  .entry-meta { font-size: 8.5pt; line-height: 1.35; }
+  .entry-body { max-width: none; }
+  .entry-body p { font-size: 9pt; line-height: 1.4; padding-left: 10px; text-indent: -10px; }
+  .entry-body p + p { margin-top: 4px; }
+  .entry-body p::before { content: "\2022\00a0\00a0"; }
+  /* the case-study links are a screen affordance, not resume content */
+  .entry-body p:has(> a) { display: none; }
+
+  .skill-group + .skill-group { margin-top: 5px; }
+  .skill-group dt, .skill-group dd { font-size: 9pt; line-height: 1.4; }
+
+  section { break-inside: auto; }
+  h2, h3 { break-after: avoid; page-break-after: avoid; }
+}
 }
