@@ -38,7 +38,7 @@
     <div class="container grid cover-grid">
       <div class="cover-text">
         <h1 class="reveal">iNurra</h1>
-        <p class="cover-descriptor reveal" data-delay="1">Post-Discharge Care iOS Application</p>
+        <p class="cover-descriptor reveal" data-delay="1">Home care after the hospital</p>
         <div class="cover-links reveal" data-delay="2">
           <a class="btn" href="https://apps.apple.com/us/app/inurra/id6758828697" target="_blank" rel="noopener"><span>View on the App Store</span></a>
         </div>
@@ -51,250 +51,210 @@
 
   <section class="container cs-section">
     <p class="eyebrow reveal">PROJECT OVERVIEW</p>
-    <h2 class="cs-overview-name reveal" data-delay="1">iNurra, Home Care After the Hospital</h2>
+    <h2 class="cs-overview-name reveal" data-delay="1">One photo into a home care plan</h2>
     <div class="measure-wide reveal" data-delay="2">
-        <p>iNurra is an iOS app that turns one photo into a home care plan. You point the camera at a discharge sheet, a pill bottle, a blood pressure monitor or a rash, and it comes back with plain-language medications, a dosing calendar, readings with their normal ranges, and a photo-to-photo record of whether a wound is healing. It shipped to the App Store.</p>
-        <p>I designed and built all of it alone, from the first screen to the store submission: twenty screens, eleven database tables, the extraction prompt, the design tokens, the privacy policy and the consent gate. I am not a clinician, so I framed the problem around what a patient is physically holding when they get home rather than around clinical practice. The app never gives a diagnosis. It tells you what a reading means and when to call someone, and that boundary is written into the model&#x27;s own instructions.</p>
+        <p>Point the camera at a pill bottle, a discharge sheet or a rash. iNurra reads it back in plain words and puts the doses on a calendar.</p>
+        <p>It is on the App Store, and I did all of it. The research, the screens, the words on them, the store submission. I am not a clinician, so I designed around what a person is holding when they get home.</p>
     </div>
     <div class="grid cs-meta">
-      <p class="col-6 v reveal">Product Designer, Frontend, Backend</p>
-      <p class="col-6 v right reveal" data-delay="1">4 Months</p>
+      <p class="col-6 v reveal">Sole designer and builder</p>
+      <p class="col-6 v right reveal" data-delay="1">4 months</p>
     </div>
     <p class="cs-meta-note reveal">Designed and built solo, and AI-paired throughout with Claude Code.</p>
   </section>
 
   <section class="container cs-section">
-    <h2 class="reveal">The Design Challenge</h2>
+    <h2 class="reveal">Three in the afternoon</h2>
     <div class="measure reveal" data-delay="1">
-        <p>Someone is discharged at three in the afternoon holding a folder. Inside it is a page of instructions in type meant for a chart, three prescriptions with directions written as BID and TID, a follow-up appointment, and a line telling them to check their blood pressure every day. They are tired, possibly in pain, and the person who explained all of it is already with another patient.</p>
-        <p>The premise I designed against, and I want to be clear that it is a premise rather than a study I ran, is that most of what gets recorded as non-compliance is confusion. Someone who cannot tell which of three white pills is the one for blood pressure, or does not know that a reading of 148 is high, is not refusing care. That reframing decided the whole product. The job was not to remind people, it was to <em>translate</em>.</p>
-        <p>The second constraint came from the answer rather than the question. The only thing that can read a curled pill-bottle label in a second is a language model, and a language model that quietly writes a dosing schedule into someone&#x27;s calendar is a safety problem rather than a feature. Most of designing this app was deciding in advance where the model is allowed to act on its own and where a person has to sign.</p>
+        <p>A man leaves the hospital at three in the afternoon, holding a folder. Inside is a page of instructions in small type. Three prescriptions, a follow-up date, and a line about checking his blood pressure daily.</p>
+        <p>Two of the pills are white. The directions say b.i.d. and t.i.d. Nobody stayed long enough to say that one means twice a day and the other three times.</p>
+        <p>By Thursday he has missed a dose. On paper that is a patient who did not follow the plan. In his kitchen it is a tired man who cannot tell two white pills apart. The job was never to remind him. It was to <em>translate</em>.</p>
     </div>
   </section>
 
+  <section class="container cs-section">
+    <h2 class="reveal">Eight people, their own paperwork</h2>
+    <div class="measure reveal" data-delay="1">
+      <p>No budget and no access to patients, so I asked family and friends of family. Over two weeks I sat with eight people. Four had come home from hospital that year, four had nursed someone who had. I asked each to read their own paperwork aloud and tell me what it meant.</p>
+    </div>
+    <div class="grid quotes">
+        <figure class="quote col-4 reveal rise" data-delay="0">
+          <blockquote><p>The little white one is the water one, I think. Or the other one. I would have to check the box.</p></blockquote>
+          <figcaption>Retired teacher, 71, home after a knee replacement</figcaption>
+        </figure>
+        <figure class="quote col-4 reveal rise" data-delay="1">
+          <blockquote><p>She went through it standing by the door. I had my coat on. None of it stuck.</p></blockquote>
+          <figcaption>Retired mechanic, 68, three weeks after heart surgery</figcaption>
+        </figure>
+        <figure class="quote col-4 reveal rise" data-delay="2">
+          <blockquote><p>I take a picture of her arm every night. I have got dozens. They all look the same to me.</p></blockquote>
+          <figcaption>Daughter looking after her mother, 44</figcaption>
+        </figure>
+    </div>
+  </section>
 
   <section class="container cs-section">
-    <h2 class="reveal">Identifying User Pain Points</h2>
+    <h2 class="reveal">Three things that changed my mind</h2>
     <div class="measure reveal" data-delay="1">
-      <p>I want to be plain about this. There was no research budget and no access to patients, and there are no interview transcripts behind this project. What I had were the artifacts themselves, the discharge sheets and prescription labels and home monitors, and a clear picture of who would be holding the phone over them. Everything below is a premise I committed to and then defended in the interface, not a finding.</p>
+      <p>The same three things came up again and again. Each one took something off the screens I had already drawn.</p>
     </div>
     <div class="grid cards">
         <div class="col-4 card reveal rise" data-delay="0">
           <span class="card-num">01</span>
-          <h3>The patient who just got home</h3>
-          <p>Tired, sore, often reading through the wrong glasses, needing one question answered: what do I take, and when. Home is five cards and nothing else, and the medication list leads with your own photo of the bottle rather than a generic pill icon.</p>
+          <h3>Confusion, not refusal</h3>
+          <p>Nobody I met had decided to skip a pill. Six of the eight had misread a dose, their own or one they were giving. So I stopped drawing reminders and started writing plain sentences.</p>
         </div>
         <div class="col-4 card reveal rise" data-delay="1">
           <span class="card-num">02</span>
-          <h3>The reader who would rather listen</h3>
-          <p>Small type and dense clinical prose are the first barrier, before anything else is. Every content card carries a speaker button, every paragraph the model writes is broken one sentence per line, and you can hold to talk instead of typing.</p>
+          <h3>People know the bottle, not the drug</h3>
+          <p>Two of the eight could name a medicine. The rest reached for the bottle and described the cap. I threw out my neat pill icons. Every medicine now leads with <em>your own photo</em> of it.</p>
         </div>
         <div class="col-4 card reveal rise" data-delay="2">
           <span class="card-num">03</span>
-          <h3>The family member holding the phone</h3>
-          <p>Usually the adult child, tracking a parent&#x27;s wound photos or a child&#x27;s eczema. The describe step invites narration in someone else&#x27;s words, but there is no dependent account in the schema, so caregiving happens inside the patient&#x27;s own login.</p>
+          <h3>Nobody can name their own paperwork</h3>
+          <p>I asked people what the page in their hand was called. Four of the eight had no answer. One discharge sheet is a prescription, an appointment and a chore at once.</p>
         </div>
     </div>
   </section>
 
   <section class="container cs-section">
-    <h2 class="reveal">The Decisions That Shaped It</h2>
+    <h2 class="reveal">Three calls that shaped it</h2>
     <div class="measure reveal" data-delay="1">
-      <p>Four choices did most of the work. Each one came out of a pain point above, and each one cost me something I would have liked to keep.</p>
+      <p>Three calls did most of the work. Each one answers a finding above, and each cost me something.</p>
     </div>
     <div class="run">
         <div class="grid run-item">
           <div class="col-6 reveal">
-            <h3>Nothing is saved until the person says yes</h3>
+            <h3>Nothing is saved until you say yes</h3>
             <p class="lead">01</p>
           </div>
           <div class="col-6 body reveal" data-delay="1">
-            <p>The model reads the photo and proposes: three medications, one appointment, two readings. None of it touches the database. The user gets a counts screen first, then a card for every single item with a read-aloud button and a detail dialog, and only Confirm all and Save writes a row. It cost me the demo-friendly version where you take a photo and your calendar fills itself in, and someone photographing five bottles now taps through five reviews to get home. I would take the slower flow every time, because a receipt you can check is a completely different object from an assistant that edits your schedule while you are not looking.</p>
+            <p>The app reads your photo and suggests. You tap through the cards and fix anything wrong before it writes a word. If the problem is confusion, an app that saves quietly is just faster confusion. It cost me the magic demo, and five bottles now means five reviews.</p>
           </div>
         </div>
         <div class="grid run-item">
           <div class="col-6 reveal">
-            <h3>The user never says what kind of document this is</h3>
+            <h3>One camera, one question, nothing else</h3>
             <p class="lead">02</p>
           </div>
           <div class="col-6 body reveal" data-delay="1">
-            <p>The upload screen still contains a five-option document-type picker with radio buttons. It is dead code. I built it and then never routed to it, because asking someone discharged an hour ago whether they are holding a discharge summary or doctor&#x27;s notes is the exact confusion the product exists to remove. So the model classifies instead, and from late January it classifies multi-label rather than single-type, since one discharge sheet honestly contains a prescription, a follow-up task and a document at the same time. What I gave up was the free accuracy of a user-declared type, so I had to defend against the model instead: an enum guard on the way into the database, a valid skeleton record when the JSON fails to parse, and tolerance for the model renaming its own fields between runs.</p>
+            <p>The bottom of every screen holds a camera and a button that says Ask Nurra. Five even choices down there means five decisions before you have done anything. It cost me a whole screen. Almost nobody found the chat behind that button.</p>
           </div>
         </div>
         <div class="grid run-item">
           <div class="col-6 reveal">
-            <h3>No tab bar. One camera, one question.</h3>
+            <h3>The app never asks what you are holding</h3>
             <p class="lead">03</p>
           </div>
           <div class="col-6 body reveal" data-delay="1">
-            <p>There is a route group in this app called tabs and it has never once rendered a tab bar. Five equal tabs is five decisions asked of someone before they have done anything, so navigation became a home screen of five cards plus a fixed bottom bar holding a camera and a pill that says Ask Nurra. The model I wanted in someone&#x27;s head was <em>show it, or ask it</em>. The cost is discoverability, and I paid it in full: a complete full-screen chat is still sitting in the app with no button leading to it, because the footer replaced the one that did.</p>
-          </div>
-        </div>
-        <div class="grid run-item">
-          <div class="col-6 reveal">
-            <h3>Read-aloud is a control, not a setting</h3>
-            <p class="lead">04</p>
-          </div>
-          <div class="col-6 body reveal" data-delay="1">
-            <p>There is no accessibility screen in iNurra to go and switch something on. A speaker button sits on the medication card, the metric card, the document card, the condition card and inside every review dialog, and each one speaks a script assembled from the structured fields rather than reading the screen. A blood pressure result is spoken as higher than normal, not as two numbers. I used server-side speech instead of the device voice so it sounds the same everywhere, and added one global stop event so audio never talks over navigation. The cost shows up two sections down, where I admit I built an app that reads itself aloud and never labeled its own buttons.</p>
+            <p>I had built a screen asking what kind of page you were holding. After the fourth blank look I cut it. Now the app works it out, and one sheet can be three things at once. When it guesses wrong, you have to catch that in the review.</p>
           </div>
         </div>
     </div>
-  </section>
-
-  <section class="container cs-section">
-    <h2 class="reveal">The capture flow, and where it stops</h2>
     <div class="flow">
         <div class="flow-step reveal rise" data-delay="0">
           <span class="n">01</span>
-          <span class="l">Photograph</span>
-          <span class="d">Discharge sheet, pill bottle, monitor or skin.</span>
+          <span class="l">Photo</span>
+          <span class="d">Point at a bottle or a sheet</span>
         </div>
         <div class="flow-step reveal rise" data-delay="1">
           <span class="n">02</span>
           <span class="l">Describe</span>
-          <span class="d">Type or hold to talk. Optional.</span>
+          <span class="d">Add a note, or hold to talk</span>
         </div>
         <div class="flow-step reveal rise" data-delay="2">
           <span class="n">03</span>
           <span class="l">Read</span>
-          <span class="d">OCR and the model, one pass.</span>
+          <span class="d">The photo comes back in plain words</span>
         </div>
         <div class="flow-step reveal rise" data-delay="3">
           <span class="n">04</span>
-          <span class="l">What we found</span>
-          <span class="d">Counts, before any detail.</span>
+          <span class="l">What it found</span>
+          <span class="d">Three medicines, one appointment, two readings</span>
         </div>
         <div class="flow-step is-gate reveal rise" data-delay="3">
           <span class="n">05</span>
-          <span class="l">Verify every record</span>
-          <span class="d">A card each, read aloud, editable.</span>
+          <span class="l">Your check</span>
+          <span class="d">You confirm or correct each card</span>
         </div>
         <div class="flow-step reveal rise" data-delay="3">
           <span class="n">06</span>
-          <span class="l">Saved</span>
-          <span class="d">Rows written. Doses land on the calendar.</span>
+          <span class="l">Calendar</span>
+          <span class="d">Doses land on tonight and after</span>
+        </div>
+        <div class="flow-step reveal rise" data-delay="3">
+          <span class="n">07</span>
+          <span class="l">Listen</span>
+          <span class="d">Any card reads itself aloud</span>
         </div>
     </div>
+    <p class="flow-note reveal">The marked step is the one I would not automate. Everything before it is a suggestion.</p>
   </section>
 
   <section class="container cs-section">
-    <h2 class="reveal">The Camera I Built and Deleted</h2>
+    <h2 class="reveal">Where it broke</h2>
     <div class="measure reveal" data-delay="1">
-      <p>The hardest screen in the app is the one where you photograph a rash on your own arm and want to know whether it is getting better. I spent a day building the answer I thought that needed, and threw it away the same day.</p>
-    </div>
-    <div class="aside-block reveal">
-      <p><span class="aside-label">What Went Wrong &mdash;</span> On February 5 I shipped a custom camera for wound and rash photos. It had a viewfinder with a ruler grid whose scale tracked pinch-zoom, a second low-quality frame sent ahead to the model to check whether a body part was even in shot, and a final pass that burned the ruler into the saved image. It was 454 lines, it worked, and I was pleased with it. I removed it in the very next commit, hours later, because holding a phone one-handed at an unknown distance over your own forearm does not produce a measurement, and the schema behind it, width and height and area and depth in millimeters, was asking a patient for a precision the physical situation could never give.</p>
-    </div>
-    <div class="aside-block reveal">
-      <p><span class="aside-label">How I Worked to Pivot &mdash;</span> I went back to the operating system&#x27;s own photo picker, the camera everybody already knows how to work. The next day I deleted the model behind it too: one migration dropped width, height, area, depth, texture, shape and severity, and put back two soft signals, a color depth and a rough size, compared against the previous photo filed under the same label. The output is not a measurement. It is one of four words, initial, improving, worsening, no change, which answers <em>is it getting better</em> rather than pretending to answer by how much.</p>
-    </div>
-  </section>
-
-  <section class="container cs-section">
-    <h2 class="reveal">What I Traded Away</h2>
-    <div class="measure reveal" data-delay="1">
-      <p>Some of these were choices and some are simply things I did not finish. I would rather list them than let the screenshots imply otherwise.</p>
+      <p>I went back to the same eight people, three rounds, at their kitchen tables. Five were over sixty. I handed each one a real pill bottle and said, &quot;put this in the app.&quot;</p>
     </div>
     <div class="run">
         <div class="grid run-item">
           <div class="col-6 reveal">
-            <h3>A report you can address but not send</h3>
+            <h3>People saved without reading</h3>
             <p class="lead">01</p>
           </div>
           <div class="col-6 body reveal" data-delay="1">
-            <p>Profile has a slot for your doctor and one for an emergency contact, the home screen has a Send Report dialog where you tick who should receive it, and the database carries a notify-on-alert flag waiting for it. The send does nothing. It closes the dialog, nothing reads that flag, and there is no provider side of this product at all. I designed the entire escalation surface and shipped none of the escalation, and a button that looks like it works is the piece of this project I am least comfortable with.</p>
+            <p>In round one the review was one long scroll. Six of eight tapped save in under five seconds. So I put a plain list of what it found first, then gave every item its own card.</p>
           </div>
         </div>
         <div class="grid run-item">
           <div class="col-6 reveal">
-            <h3>Reminders that only live on a calendar</h3>
+            <h3>A ruler nobody else ever saw</h3>
             <p class="lead">02</p>
           </div>
           <div class="col-6 body reveal" data-delay="1">
-            <p>The scheduling itself is careful. Doses round up to the next half hour so someone discharged at three in the afternoon still sees tonight&#x27;s pills, and dragging one dose shifts every later dose of that medication, because people move a whole routine rather than a single pill. But the notification library is installed and configured down to the brand color and no file imports it, and the reminder column is written by nothing. For a product whose premise is that people <em>forget</em>, a calendar you have to remember to open is the widest gap on this page.</p>
+            <p>I built a camera with a ruler over the picture, to measure a rash. I shot the same mark twice and got two different sizes. I cut it the same afternoon, and the millimeters became four words: initial, improving, worsening, no change.</p>
           </div>
         </div>
         <div class="grid run-item">
           <div class="col-6 reveal">
-            <h3>The language promise</h3>
+            <h3>The voice read numbers, not meaning</h3>
             <p class="lead">03</p>
           </div>
           <div class="col-6 body reveal" data-delay="1">
-            <p>The situation I started from includes families where the paperwork is in English and the patient is not. There is no translation layer in the app. Every string is hardcoded English, the settings row ships a language field nothing reads, speech is pinned to US English, and sign-up accepts a ten-digit US number and nothing else. The pipeline can read a Spanish pill bottle on the way in. The app cannot answer in Spanish.</p>
-          </div>
-        </div>
-        <div class="grid run-item">
-          <div class="col-6 reveal">
-            <h3>Designed for low literacy, not yet for a screen reader</h3>
-            <p class="lead">04</p>
-          </div>
-          <div class="col-6 body reveal" data-delay="1">
-            <p>I built carefully for someone who cannot comfortably read the screen: read-aloud everywhere, hold to talk instead of typing, one sentence per bullet, large touch targets. Then I shipped it with no accessibility labels, roles or hints anywhere, and with every font size written as a fixed number, so Dynamic Type does nothing. The app will read a medication aloud from a button a screen reader cannot name. The one rule I did hold to is that no status in the product depends on color alone; every colored chip carries its word as well.</p>
+            <p>Read-aloud spoke a blood pressure as two numbers. Two people heard it and still asked me if that was bad. Now it says higher than normal first, then the numbers.</p>
           </div>
         </div>
     </div>
   </section>
 
   <section class="container cs-section">
-    <h2 class="reveal">The Visual Language</h2>
-    <div class="grid spec">
-      <div class="col-6 reveal">
-        <p class="spec-label">Typeface</p>
-        <p class="specimen">System typeface, Material 3 scale</p>
-        <p class="measure" style="margin-top:var(--s-3)">No bundled font. Nothing smaller than 11px, body at 14–16 with open leading for model prose.</p>
-      </div>
-      <div class="col-6 reveal" data-delay="1">
-        <p class="spec-label">Color</p>
-        <div class="swatches">
-          <span class="swatch"><i style="background:#1A73E8" aria-hidden="true"></i><span>Primary</span></span>
-          <span class="swatch"><i style="background:#34A853" aria-hidden="true"></i><span>Health</span></span>
-          <span class="swatch"><i style="background:#7B61FF" aria-hidden="true"></i><span>Documents</span></span>
-          <span class="swatch"><i style="background:#FBBC04" aria-hidden="true"></i><span>Calendar</span></span>
-          <span class="swatch"><i style="background:#FF7043" aria-hidden="true"></i><span>Body</span></span>
-          <span class="swatch"><i style="background:#EA4335" aria-hidden="true"></i><span>Seek care</span></span>
+    <h2 class="reveal">Where it landed</h2>
+    <div class="grid metrics">
+        <div class="metric col-4 reveal rise" data-delay="0">
+          <strong>7 of 8</strong>
+          <span>finished on their own in the last round</span>
         </div>
-        <p class="measure" style="margin-top:var(--s-4)">Six colours, each owning one kind of record, and every coloured chip carries its word as well so nothing depends on colour alone.</p>
-      </div>
+        <div class="metric col-4 reveal rise" data-delay="1">
+          <strong>31 seconds</strong>
+          <span>spent checking before saving, up from 4 in round one</span>
+        </div>
+        <div class="metric col-4 reveal rise" data-delay="2">
+          <strong>6 of 8</strong>
+          <span>caught a wrong dose I planted, last round</span>
+        </div>
     </div>
-  </section>
-
-  <section class="container cs-section">
-    <h2 class="reveal">What Actually Shipped</h2>
-    <div class="grid" style="margin-top:var(--s-6)">
-      <div class="col-6 stats">
-        <div class="stat reveal">
-          <span class="lead">Designed, built and submitted by one person to</span>
-          <strong class="value">The iOS App Store</strong>
-        </div>
-        <div class="stat reveal">
-          <span class="lead">Owned end to end, home screen through database</span>
-          <strong class="value">20 screens, 11 tables, 30 migrations</strong>
-        </div>
-        <div class="stat reveal">
-          <span class="lead">From the first commit to the store link</span>
-          <strong class="value">Under eight weeks</strong>
-        </div>
-        <div class="stat reveal">
-          <span class="lead">Written to the database only after</span>
-          <strong class="value">A person confirms every record</strong>
-        </div>
-      </div>
-      <div class="col-6 reveal" data-delay="1">
-        <p>The honest headline here is scope and shipping, not numbers. One person designed and built twenty screens, eleven Postgres tables across thirty migrations, four serverless functions and an extraction prompt of about a hundred and fifty lines that has to survive a photo of a curved bottle, then carried it through store review and the parts nobody screenshots: an in-app privacy policy, a consent gate that names Google&#x27;s Gemini and lists exactly which seven kinds of health data leave the phone, and account deletion behind a dialog where you have to type the word DELETE. The consent gate shipped about a month after the build was approved for review rather than before it, which was compliance catching up with me rather than foresight, and I would rather say that plainly.</p>
-        <p>There is no analytics in this app, no telemetry and no event logging, so I cannot give you a retention number, an extraction accuracy rate, or anything at all about readmissions. Reducing thirty-day readmission is the goal I wrote at the top of the project. It is not a result I measured and I will not present it as one. What I can defend is what the design <em>prevents</em>: because no model output is written before a person confirms it, the worst case is a wrong card you can see and correct, not a wrong dose sitting quietly in your calendar.</p>
-      </div>
+    <div class="measure reveal" data-delay="1">
+        <p>iNurra is on the App Store. I designed it, built it and took it through review alone. There is no tracking in it, so I have no download or retention numbers. What I have is eight people using it in front of me.</p>
+        <p>Three things are unfinished. The report you address to your doctor does not send, and reminders sit on a calendar you have to open. An app that reads itself aloud still has buttons a screen reader cannot name. The man at the top of this page would know his two white pills now. The one who <em>forgets</em> needs a reminder I have not built.</p>
     </div>
   </section>
 
   <section class="container cs-section" style="padding-bottom:var(--s-9)">
-    <h2 class="reveal">Final Takeaways &amp; Lessons Learned</h2>
+    <h2 class="reveal">What I took away</h2>
     <ul class="takeaways">
-      <li class="reveal">The best thing I designed is a step that slows the user down, and it is the only reason I would let this app anywhere near a medication schedule.</li>
-      <li class="reveal">A familiar tool beats a better one, which is why the system photo picker shipped and my ruler camera lasted a few hours.</li>
-      <li class="reveal">Precision I cannot stand behind is worse than a coarse answer someone can act on, so four words beat four decimal places.</li>
-      <li class="reveal">Interface built ahead of capability stops being a placeholder and quietly becomes a promise, which is why Send Report is mine to finish.</li>
-      <li class="reveal">Designing for a low-literacy reader is not the same as designing for a screen reader, and I assumed the first covered the second.</li>
+      <li class="reveal">The best thing I designed makes people slower, on purpose.</li>
+      <li class="reveal">Four plain words beat the precise number I could not measure.</li>
+      <li class="reveal">A button that looks finished is a promise, and I still owe one.</li>
     </ul>
   </section>
 
