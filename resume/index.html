@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Resume — Jayden Yu</title>
+<meta name="description" content="Jayden Yu&#x27;s resume — four years of software quality assurance at Internet Brands, and three products designed, built and shipped solo.">
+<link rel="canonical" href="https://jaydenyu0210.github.io/resume/">
+<meta property="og:title" content="Resume — Jayden Yu">
+<meta property="og:description" content="Jayden Yu&#x27;s resume — four years of software quality assurance at Internet Brands, and three products designed, built and shipped solo.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jaydenyu0210.github.io/resume/">
+<meta property="og:image" content="https://jaydenyu0210.github.io/assets/portrait-800.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+<link rel="icon" href="/assets/inurra.jpg">
+<script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="nav-mark" href="/">jayden yu</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu"><i aria-hidden="true"></i></button>
+    <nav class="nav-links" id="nav-links" aria-label="Primary">
+      <a href="/">work</a>
+      <a href="/about/">about</a>
+      <a href="/resume/" aria-current="page">resume</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+
+  <section class="container page-head">
+    <div class="page-head-row">
+      <h1 class="reveal">Resume.</h1>
+      <button class="btn btn-print reveal" data-delay="1" type="button" onclick="window.print()"><span>Save as PDF</span></button>
+    </div>
+  </section>
+
+  <section class="container">
+    <hr class="rule reveal">
+    <h2 class="section-label reveal">Experience</h2>
+    <hr class="rule reveal">
+      <article class="grid entry">
+        <div class="col-6 reveal">
+          <h3 class="entry-role">Ocean Export Specialist</h3>
+          <p class="entry-meta">Panda Enterprises Inc., El Monte, CA &nbsp;·&nbsp; Sep 2025 — Present</p>
+        </div>
+        <div class="col-6 entry-body reveal" data-delay="1">
+          <p>Own end-to-end operational workflows for ocean export shipments, handling urgent schedule changes and competing priorities as they come up.</p>
+          <p>Coordinate truckers, ocean carriers, shippers, vendors and overseas partners, and prepare high volume shipping and compliance documentation accurately under strict deadlines.</p>
+          <p>Communicate daily in English, Mandarin and Cantonese across internal teams and external partners.</p>
+        </div>
+      </article>
+      <article class="grid entry">
+        <div class="col-6 reveal">
+          <h3 class="entry-role">Software Quality Assurance</h3>
+          <p class="entry-meta">Internet Brands, El Segundo, CA &nbsp;·&nbsp; Aug 2021 — Sep 2025</p>
+        </div>
+        <div class="col-6 entry-body reveal" data-delay="1">
+          <p>Owned quality for Nolo.com, a customer-facing web application, and WillMaker, a desktop application, from test planning and case design through release readiness.</p>
+          <p>Ran manual, exploratory, functional, regression, integration, system and acceptance testing ahead of each release, and reported quality metrics and open risk into go or no-go decisions.</p>
+          <p>Built and maintained automated test suites in Playwright, Selenium, pytest and Robot Framework, structured behind a Page Object Model and integrated into CI/CD pipelines on GitHub Actions.</p>
+          <p>Tested REST APIs with Postman and validated backend behavior with SQL, confirming records stayed accurate and complete across integration points.</p>
+          <p>Managed the defect lifecycle in Jira and YouTrack with clear reproduction, severity and impact detail, drove root-cause analysis, and tracked issues through to resolution.</p>
+          <p>Worked in Agile/Scrum with developers, product and design, and used TestRail for test management and BrowserStack for cross-browser and cross-platform coverage.</p>
+        </div>
+      </article>
+  </section>
+
+  <section class="container" style="padding-top:var(--s-10)">
+    <hr class="rule reveal">
+    <h2 class="section-label reveal">Products I designed and built</h2>
+    <hr class="rule reveal">
+      <article class="grid entry">
+        <div class="col-6 reveal">
+          <h3 class="entry-role">iNurra</h3>
+          <p class="entry-meta">AI post-discharge care app, shipped to the App Store &nbsp;·&nbsp; React Native, Expo, Supabase, Spring Boot</p>
+        </div>
+        <div class="col-6 entry-body reveal" data-delay="1">
+          <p>Designed and shipped an iOS app that turns photographed medical documents into structured medications, appointments, health metrics and care tasks, owning the full path from concept through store submission.</p>
+          <p>Constrained model extraction to fixed schemas so malformed output fails visibly, with a mandatory human review step where every generated record is confirmed or corrected before it is written to the database.</p>
+          <p>Architected the backend on PostgreSQL with versioned migrations, per-operation row-level access policies, vector similarity search and scheduled event generation.</p>
+          <p>Built a Spring Boot service with token issuer and audience validation, ownership-scoped lookups and a centralized error contract, covered by an automated suite that runs fully offline.</p>
+          <p><a href="/work/inurra/">Read the case study &rarr;</a></p>
+        </div>
+      </article>
+      <article class="grid entry">
+        <div class="col-6 reveal">
+          <h3 class="entry-role">wellbeingABC.com</h3>
+          <p class="entry-meta">Bilingual two-sided marketplace with payments and payouts &nbsp;·&nbsp; Next.js, TypeScript, PostgreSQL, Stripe</p>
+        </div>
+        <div class="col-6 entry-body reveal" data-delay="1">
+          <p>Built a full-stack marketplace covering registration and roles, listings, availability scheduling, booking, payments, payouts, a wallet ledger, withdrawals, refunds and an admin console.</p>
+          <p>Made the money path correct under retries and races by design: server side price re-validation, database status guards and compare-and-swap accounting, an idempotent payment webhook consumer, and named reconciliation codes each paired with a documented remedy.</p>
+          <p>Wrote the automated test suite with dedicated coverage for payment, wallet and checkout correctness, spanning concurrent approval races, retry exhaustion, refund rollback and duplicate delivery idempotency.</p>
+          <p>Delivered full English and Chinese localization with server side locale resolution, and shipped a grounded AI assistant with rate limiting and a graceful degraded response.</p>
+          <p><a href="/work/wellbeingabc/">Read the case study &rarr;</a></p>
+        </div>
+      </article>
+      <article class="grid entry">
+        <div class="col-6 reveal">
+          <h3 class="entry-role">ArchSpace</h3>
+          <p class="entry-meta">Open-source node-based workflow desktop app &nbsp;·&nbsp; TypeScript monorepo, Electron, React</p>
+        </div>
+        <div class="col-6 entry-body reveal" data-delay="1">
+          <p>Architected a demand-driven, memoized execution engine with content-addressed cache keys, laned concurrency, cancellation, retry classification for transient errors only, and partial-failure isolation.</p>
+          <p>Built out-of-process plugin isolation with manifest-declared permissions and install-time consent, shipping the first-party plugin through the same loader a third-party plugin uses.</p>
+          <p>Built the test suite and CI gate ending in an end-to-end run across every shipped example workflow, plus a launch smoke test on the packaged app and a deterministic scheduler mode that makes concurrency testable rather than flaky.</p>
+          <p>Maintained a public status ledger classifying every capability as real, placeholder or absent, under a standing rule that an unimplemented feature is never presented to a user as working.</p>
+          <p><a href="https://github.com/jaydenyu0210/archspace" target="_blank" rel="noopener">View on GitHub &rarr;</a></p>
+        </div>
+      </article>
+  </section>
+
+  <section class="container" style="padding-top:var(--s-10)">
+    <hr class="rule reveal">
+    <h2 class="section-label reveal">Education</h2>
+    <hr class="rule reveal">
+      <article class="grid entry">
+        <div class="col-6 reveal">
+          <h3 class="entry-role">B.S. Computer Engineering</h3>
+          <p class="entry-meta">University of California, Santa Barbara &nbsp;·&nbsp; Sep 2018 — Apr 2022</p>
+        </div>
+        <div class="col-6 entry-body reveal" data-delay="1">
+          <p>Coursework in software systems, algorithms, databases, networking and computer architecture, with software projects in Python, JavaScript and SQL.</p>
+        </div>
+      </article>
+  </section>
+
+  <section class="container" style="padding-top:var(--s-10);padding-bottom:var(--s-12)">
+    <hr class="rule reveal">
+    <h2 class="section-label reveal">Skills</h2>
+    <hr class="rule reveal">
+      <div class="grid entry">
+        <div class="col-6 reveal">
+          <h3 class="entry-role">What I work with</h3>
+          <p class="entry-meta">Design, product and engineering</p>
+        </div>
+        <dl class="col-6 entry-body reveal" data-delay="1">
+        <div class="skill-group">
+          <dt>Product &amp; design</dt>
+          <dd>Problem framing, product definition, PRD authoring, user stories, acceptance criteria, flows and information architecture, interface design, design systems and tokens, bilingual and localized design, accessibility considerations, release planning, cross-functional coordination</dd>
+        </div>
+        <div class="skill-group">
+          <dt>Testing &amp; QA</dt>
+          <dd>Test strategy, test planning, test-case design, manual, functional, exploratory, regression, integration, system and end-to-end testing, UAT, API testing, cross-browser and cross-platform testing, defect lifecycle management, defect triage, root-cause analysis, quality metrics</dd>
+        </div>
+        <div class="skill-group">
+          <dt>Automation &amp; CI/CD</dt>
+          <dd>Playwright, Selenium, pytest, Robot Framework, Vitest, Page Object Model, reusable automation frameworks, property-based testing, GitHub Actions, CI/CD pipelines, Git</dd>
+        </div>
+        <div class="skill-group">
+          <dt>Engineering</dt>
+          <dd>TypeScript, React, Next.js, React Native, Node.js, Electron, Spring Boot, REST API design, PostgreSQL, Supabase, database migrations, Row Level Security, OAuth 2.1 and JWT authentication, webhooks, Stripe, Tailwind CSS, Vercel</dd>
+        </div>
+        <div class="skill-group">
+          <dt>AI</dt>
+          <dd>LLM integration, Google Gemini, prompt engineering, structured output extraction, retrieval-augmented generation, semantic search, AI output validation, human-in-the-loop review</dd>
+        </div>
+        <div class="skill-group">
+          <dt>Languages</dt>
+          <dd>English, Mandarin and Cantonese &nbsp;·&nbsp; Python, JavaScript, SQL, HTML/CSS, C++</dd>
+        </div>
+        <div class="skill-group">
+          <dt>Tools</dt>
+          <dd>Jira, YouTrack, TestRail, BrowserStack, Postman</dd>
+        </div>
+        </dl>
+      </div>
+  </section>
+
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="grid footer-a">
+      <span class="footer-mark">jayden yu</span>
+      <span class="footer-cta">Let&#x27;s build something.</span>
+      <span class="footer-mail"><a href="mailto:jiaweiyu2009@gmail.com">Reach out</a></span>
+    </div>
+    <hr class="footer-seam">
+    <div class="grid footer-b">
+      <nav aria-label="Footer">
+        <a href="/">work</a>
+        <a href="/about/">about</a>
+        <a href="/resume/" aria-current="page">resume</a>
+      </nav>
+      <div class="social">
+        <a href="https://www.linkedin.com/in/jaydenyu0210" rel="me noopener" target="_blank">LinkedIn</a>
+        <a href="https://github.com/jaydenyu0210" rel="me noopener" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

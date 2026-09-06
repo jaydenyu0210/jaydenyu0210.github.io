@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>iNurra — Jayden Yu</title>
+<meta name="description" content="iNurra: an iOS app that turns a photo of discharge paperwork into a home care plan you can actually follow. Designed, built and shipped to the App Store solo.">
+<link rel="canonical" href="https://jaydenyu0210.github.io/work/inurra/">
+<meta property="og:title" content="iNurra — Jayden Yu">
+<meta property="og:description" content="iNurra: an iOS app that turns a photo of discharge paperwork into a home care plan you can actually follow. Designed, built and shipped to the App Store solo.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jaydenyu0210.github.io/work/inurra/">
+<meta property="og:image" content="https://jaydenyu0210.github.io/assets/inurra-thumb-1024.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+<link rel="icon" href="/assets/inurra.jpg">
+<script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="nav over-cover cover-light">
+  <div class="container nav-inner">
+    <a class="nav-mark" href="/">jayden yu</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu"><i aria-hidden="true"></i></button>
+    <nav class="nav-links" id="nav-links" aria-label="Primary">
+      <a href="/" aria-current="true">work</a>
+      <a href="/about/">about</a>
+      <a href="/resume/">resume</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+
+  <section class="cover cover-inurra">
+    <div class="container grid cover-grid">
+      <div class="cover-text">
+        <h1 class="reveal">iNurra</h1>
+        <p class="cover-descriptor reveal" data-delay="1">Post-Discharge Care iOS Application</p>
+        <div class="cover-links reveal" data-delay="2">
+          <a class="btn" href="https://apps.apple.com/us/app/inurra/id6758828697" target="_blank" rel="noopener"><span>View on the App Store</span></a>
+        </div>
+      </div>
+      <div class="cover-art reveal rise" data-delay="1">
+<picture><source type="image/webp" srcset="/assets/inurra-thumb-512.webp 512w, /assets/inurra-thumb-768.webp 768w, /assets/inurra-thumb-1024.webp 1024w" sizes="(max-width: 991px) min(460px, calc(100vw - 48px)), min(660px, 50vw)"><img src="/assets/inurra-thumb-1024.jpg" srcset="/assets/inurra-thumb-512.jpg 512w, /assets/inurra-thumb-768.jpg 768w, /assets/inurra-thumb-1024.jpg 1024w" sizes="(max-width: 991px) min(460px, calc(100vw - 48px)), min(660px, 50vw)" alt="Promotional render of iNurra on an iPhone, showing a dose reminder, today&#x27;s readings and shortcuts into the records." width="1024" height="1024" loading="eager" fetchpriority="high" decoding="async"></picture>
+      </div>
+    </div>
+  </section>
+
+  <section class="container cs-section">
+    <p class="eyebrow reveal">PROJECT OVERVIEW</p>
+    <h2 class="cs-overview-name reveal" data-delay="1">iNurra, Home Care After the Hospital</h2>
+    <div class="measure-wide reveal" data-delay="2">
+        <p>iNurra is an iOS app that turns one photo into a home care plan. You point the camera at a discharge sheet, a pill bottle, a blood pressure monitor or a rash, and it comes back with plain-language medications, a dosing calendar, readings with their normal ranges, and a photo-to-photo record of whether a wound is healing. It shipped to the App Store.</p>
+        <p>I designed and built all of it alone, from the first screen to the store submission: twenty screens, eleven database tables, the extraction prompt, the design tokens, the privacy policy and the consent gate. I am not a clinician, so I framed the problem around what a patient is physically holding when they get home rather than around clinical practice. The app never gives a diagnosis. It tells you what a reading means and when to call someone, and that boundary is written into the model&#x27;s own instructions.</p>
+    </div>
+    <div class="grid cs-meta">
+      <p class="col-6 v reveal">Product Designer, Frontend, Backend</p>
+      <p class="col-6 v right reveal" data-delay="1">4 Months</p>
+    </div>
+    <p class="cs-meta-note reveal">Designed and built solo, and AI-paired throughout with Claude Code.</p>
+  </section>
+
+  <section class="container cs-section">
+    <h2 class="reveal">The Design Challenge</h2>
+    <div class="measure reveal" data-delay="1">
+        <p>Someone is discharged at three in the afternoon holding a folder. Inside it is a page of instructions in type meant for a chart, three prescriptions with directions written as BID and TID, a follow-up appointment, and a line telling them to check their blood pressure every day. They are tired, possibly in pain, and the person who explained all of it is already with another patient.</p>
+        <p>The premise I designed against, and I want to be clear that it is a premise rather than a study I ran, is that most of what gets recorded as non-compliance is confusion. Someone who cannot tell which of three white pills is the one for blood pressure, or does not know that a reading of 148 is high, is not refusing care. That reframing decided the whole product. The job was not to remind people, it was to <em>translate</em>.</p>
+        <p>The second constraint came from the answer rather than the question. The only thing that can read a curled pill-bottle label in a second is a language model, and a language model that quietly writes a dosing schedule into someone&#x27;s calendar is a safety problem rather than a feature. Most of designing this app was deciding in advance where the model is allowed to act on its own and where a person has to sign.</p>
+    </div>
+  </section>
+
+
+  <section class="container cs-section">
+    <h2 class="reveal">Identifying User Pain Points</h2>
+    <div class="measure reveal" data-delay="1">
+      <p>I want to be plain about this. There was no research budget and no access to patients, and there are no interview transcripts behind this project. What I had were the artifacts themselves, the discharge sheets and prescription labels and home monitors, and a clear picture of who would be holding the phone over them. Everything below is a premise I committed to and then defended in the interface, not a finding.</p>
+    </div>
+    <div class="grid cards">
+        <div class="col-4 card reveal rise" data-delay="0">
+          <span class="card-num">01</span>
+          <h3>The patient who just got home</h3>
+          <p>Tired, sore, often reading through the wrong glasses, needing one question answered: what do I take, and when. Home is five cards and nothing else, and the medication list leads with your own photo of the bottle rather than a generic pill icon.</p>
+        </div>
+        <div class="col-4 card reveal rise" data-delay="1">
+          <span class="card-num">02</span>
+          <h3>The reader who would rather listen</h3>
+          <p>Small type and dense clinical prose are the first barrier, before anything else is. Every content card carries a speaker button, every paragraph the model writes is broken one sentence per line, and you can hold to talk instead of typing.</p>
+        </div>
+        <div class="col-4 card reveal rise" data-delay="2">
+          <span class="card-num">03</span>
+          <h3>The family member holding the phone</h3>
+          <p>Usually the adult child, tracking a parent&#x27;s wound photos or a child&#x27;s eczema. The describe step invites narration in someone else&#x27;s words, but there is no dependent account in the schema, so caregiving happens inside the patient&#x27;s own login.</p>
+        </div>
+    </div>
+  </section>
+
+  <section class="container cs-section">
+    <h2 class="reveal">The Decisions That Shaped It</h2>
+    <div class="measure reveal" data-delay="1">
+      <p>Four choices did most of the work. Each one came out of a pain point above, and each one cost me something I would have liked to keep.</p>
+    </div>
+    <div class="run">
+        <div class="grid run-item">
+          <div class="col-6 reveal">
+            <h3>Nothing is saved until the person says yes</h3>
+            <p class="lead">01</p>
+          </div>
+          <div class="col-6 body reveal" data-delay="1">
+            <p>The model reads the photo and proposes: three medications, one appointment, two readings. None of it touches the database. The user gets a counts screen first, then a card for every single item with a read-aloud button and a detail dialog, and only Confirm all and Save writes a row. It cost me the demo-friendly version where you take a photo and your calendar fills itself in, and someone photographing five bottles now taps through five reviews to get home. I would take the slower flow every time, because a receipt you can check is a completely different object from an assistant that edits your schedule while you are not looking.</p>
+          </div>
+        </div>
+        <div class="grid run-item">
+          <div class="col-6 reveal">
+            <h3>The user never says what kind of document this is</h3>
+            <p class="lead">02</p>
+          </div>
+          <div class="col-6 body reveal" data-delay="1">
+            <p>The upload screen still contains a five-option document-type picker with radio buttons. It is dead code. I built it and then never routed to it, because asking someone discharged an hour ago whether they are holding a discharge summary or doctor&#x27;s notes is the exact confusion the product exists to remove. So the model classifies instead, and from late January it classifies multi-label rather than single-type, since one discharge sheet honestly contains a prescription, a follow-up task and a document at the same time. What I gave up was the free accuracy of a user-declared type, so I had to defend against the model instead: an enum guard on the way into the database, a valid skeleton record when the JSON fails to parse, and tolerance for the model renaming its own fields between runs.</p>
+          </div>
+        </div>
+        <div class="grid run-item">
+          <div class="col-6 reveal">
+            <h3>No tab bar. One camera, one question.</h3>
+            <p class="lead">03</p>
+          </div>
+          <div class="col-6 body reveal" data-delay="1">
+            <p>There is a route group in this app called tabs and it has never once rendered a tab bar. Five equal tabs is five decisions asked of someone before they have done anything, so navigation became a home screen of five cards plus a fixed bottom bar holding a camera and a pill that says Ask Nurra. The model I wanted in someone&#x27;s head was <em>show it, or ask it</em>. The cost is discoverability, and I paid it in full: a complete full-screen chat is still sitting in the app with no button leading to it, because the footer replaced the one that did.</p>
+          </div>
+        </div>
+        <div class="grid run-item">
+          <div class="col-6 reveal">
+            <h3>Read-aloud is a control, not a setting</h3>
+            <p class="lead">04</p>
+          </div>
+          <div class="col-6 body reveal" data-delay="1">
+            <p>There is no accessibility screen in iNurra to go and switch something on. A speaker button sits on the medication card, the metric card, the document card, the condition card and inside every review dialog, and each one speaks a script assembled from the structured fields rather than reading the screen. A blood pressure result is spoken as higher than normal, not as two numbers. I used server-side speech instead of the device voice so it sounds the same everywhere, and added one global stop event so audio never talks over navigation. The cost shows up two sections down, where I admit I built an app that reads itself aloud and never labeled its own buttons.</p>
+          </div>
+        </div>
+    </div>
+  </section>
+
+  <section class="container cs-section">
+    <h2 class="reveal">The capture flow, and where it stops</h2>
+    <div class="flow">
+        <div class="flow-step reveal rise" data-delay="0">
+          <span class="n">01</span>
+          <span class="l">Photograph</span>
+          <span class="d">Discharge sheet, pill bottle, monitor or skin.</span>
+        </div>
+        <div class="flow-step reveal rise" data-delay="1">
+          <span class="n">02</span>
+          <span class="l">Describe</span>
+          <span class="d">Type or hold to talk. Optional.</span>
+        </div>
+        <div class="flow-step reveal rise" data-delay="2">
+          <span class="n">03</span>
+          <span class="l">Read</span>
+          <span class="d">OCR and the model, one pass.</span>
+        </div>
+        <div class="flow-step reveal rise" data-delay="3">
+          <span class="n">04</span>
+          <span class="l">What we found</span>
+          <span class="d">Counts, before any detail.</span>
+        </div>
+        <div class="flow-step is-gate reveal rise" data-delay="3">
+          <span class="n">05</span>
+          <span class="l">Verify every record</span>
+          <span class="d">A card each, read aloud, editable.</span>
+        </div>
+        <div class="flow-step reveal rise" data-delay="3">
+          <span class="n">06</span>
+          <span class="l">Saved</span>
+          <span class="d">Rows written. Doses land on the calendar.</span>
+        </div>
+    </div>
+  </section>
+
+  <section class="container cs-section">
+    <h2 class="reveal">The Camera I Built and Deleted</h2>
+    <div class="measure reveal" data-delay="1">
+      <p>The hardest screen in the app is the one where you photograph a rash on your own arm and want to know whether it is getting better. I spent a day building the answer I thought that needed, and threw it away the same day.</p>
+    </div>
+    <div class="aside-block reveal">
+      <p><span class="aside-label">What Went Wrong &mdash;</span> On February 5 I shipped a custom camera for wound and rash photos. It had a viewfinder with a ruler grid whose scale tracked pinch-zoom, a second low-quality frame sent ahead to the model to check whether a body part was even in shot, and a final pass that burned the ruler into the saved image. It was 454 lines, it worked, and I was pleased with it. I removed it in the very next commit, hours later, because holding a phone one-handed at an unknown distance over your own forearm does not produce a measurement, and the schema behind it, width and height and area and depth in millimeters, was asking a patient for a precision the physical situation could never give.</p>
+    </div>
+    <div class="aside-block reveal">
+      <p><span class="aside-label">How I Worked to Pivot &mdash;</span> I went back to the operating system&#x27;s own photo picker, the camera everybody already knows how to work. The next day I deleted the model behind it too: one migration dropped width, height, area, depth, texture, shape and severity, and put back two soft signals, a color depth and a rough size, compared against the previous photo filed under the same label. The output is not a measurement. It is one of four words, initial, improving, worsening, no change, which answers <em>is it getting better</em> rather than pretending to answer by how much.</p>
+    </div>
+  </section>
+
+  <section class="container cs-section">
+    <h2 class="reveal">What I Traded Away</h2>
+    <div class="measure reveal" data-delay="1">
+      <p>Some of these were choices and some are simply things I did not finish. I would rather list them than let the screenshots imply otherwise.</p>
+    </div>
+    <div class="run">
+        <div class="grid run-item">
+          <div class="col-6 reveal">
+            <h3>A report you can address but not send</h3>
+            <p class="lead">01</p>
+          </div>
+          <div class="col-6 body reveal" data-delay="1">
+            <p>Profile has a slot for your doctor and one for an emergency contact, the home screen has a Send Report dialog where you tick who should receive it, and the database carries a notify-on-alert flag waiting for it. The send does nothing. It closes the dialog, nothing reads that flag, and there is no provider side of this product at all. I designed the entire escalation surface and shipped none of the escalation, and a button that looks like it works is the piece of this project I am least comfortable with.</p>
+          </div>
+        </div>
+        <div class="grid run-item">
+          <div class="col-6 reveal">
+            <h3>Reminders that only live on a calendar</h3>
+            <p class="lead">02</p>
+          </div>
+          <div class="col-6 body reveal" data-delay="1">
+            <p>The scheduling itself is careful. Doses round up to the next half hour so someone discharged at three in the afternoon still sees tonight&#x27;s pills, and dragging one dose shifts every later dose of that medication, because people move a whole routine rather than a single pill. But the notification library is installed and configured down to the brand color and no file imports it, and the reminder column is written by nothing. For a product whose premise is that people <em>forget</em>, a calendar you have to remember to open is the widest gap on this page.</p>
+          </div>
+        </div>
+        <div class="grid run-item">
+          <div class="col-6 reveal">
+            <h3>The language promise</h3>
+            <p class="lead">03</p>
+          </div>
+          <div class="col-6 body reveal" data-delay="1">
+            <p>The situation I started from includes families where the paperwork is in English and the patient is not. There is no translation layer in the app. Every string is hardcoded English, the settings row ships a language field nothing reads, speech is pinned to US English, and sign-up accepts a ten-digit US number and nothing else. The pipeline can read a Spanish pill bottle on the way in. The app cannot answer in Spanish.</p>
+          </div>
+        </div>
+        <div class="grid run-item">
+          <div class="col-6 reveal">
+            <h3>Designed for low literacy, not yet for a screen reader</h3>
+            <p class="lead">04</p>
+          </div>
+          <div class="col-6 body reveal" data-delay="1">
+            <p>I built carefully for someone who cannot comfortably read the screen: read-aloud everywhere, hold to talk instead of typing, one sentence per bullet, large touch targets. Then I shipped it with no accessibility labels, roles or hints anywhere, and with every font size written as a fixed number, so Dynamic Type does nothing. The app will read a medication aloud from a button a screen reader cannot name. The one rule I did hold to is that no status in the product depends on color alone; every colored chip carries its word as well.</p>
+          </div>
+        </div>
+    </div>
+  </section>
+
+  <section class="container cs-section">
+    <h2 class="reveal">The Visual Language</h2>
+    <div class="grid spec">
+      <div class="col-6 reveal">
+        <p class="spec-label">Typeface</p>
+        <p class="specimen">System typeface, Material 3 scale</p>
+        <p class="measure" style="margin-top:var(--s-3)">No bundled font. Nothing smaller than 11px, body at 14–16 with open leading for model prose.</p>
+      </div>
+      <div class="col-6 reveal" data-delay="1">
+        <p class="spec-label">Color</p>
+        <div class="swatches">
+          <span class="swatch"><i style="background:#1A73E8" aria-hidden="true"></i><span>Primary</span></span>
+          <span class="swatch"><i style="background:#34A853" aria-hidden="true"></i><span>Health</span></span>
+          <span class="swatch"><i style="background:#7B61FF" aria-hidden="true"></i><span>Documents</span></span>
+          <span class="swatch"><i style="background:#FBBC04" aria-hidden="true"></i><span>Calendar</span></span>
+          <span class="swatch"><i style="background:#FF7043" aria-hidden="true"></i><span>Body</span></span>
+          <span class="swatch"><i style="background:#EA4335" aria-hidden="true"></i><span>Seek care</span></span>
+        </div>
+        <p class="measure" style="margin-top:var(--s-4)">Six colours, each owning one kind of record, and every coloured chip carries its word as well so nothing depends on colour alone.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="container cs-section">
+    <h2 class="reveal">What Actually Shipped</h2>
+    <div class="grid" style="margin-top:var(--s-6)">
+      <div class="col-6 stats">
+        <div class="stat reveal">
+          <span class="lead">Designed, built and submitted by one person to</span>
+          <strong class="value">The iOS App Store</strong>
+        </div>
+        <div class="stat reveal">
+          <span class="lead">Owned end to end, home screen through database</span>
+          <strong class="value">20 screens, 11 tables, 30 migrations</strong>
+        </div>
+        <div class="stat reveal">
+          <span class="lead">From the first commit to the store link</span>
+          <strong class="value">Under eight weeks</strong>
+        </div>
+        <div class="stat reveal">
+          <span class="lead">Written to the database only after</span>
+          <strong class="value">A person confirms every record</strong>
+        </div>
+      </div>
+      <div class="col-6 reveal" data-delay="1">
+        <p>The honest headline here is scope and shipping, not numbers. One person designed and built twenty screens, eleven Postgres tables across thirty migrations, four serverless functions and an extraction prompt of about a hundred and fifty lines that has to survive a photo of a curved bottle, then carried it through store review and the parts nobody screenshots: an in-app privacy policy, a consent gate that names Google&#x27;s Gemini and lists exactly which seven kinds of health data leave the phone, and account deletion behind a dialog where you have to type the word DELETE. The consent gate shipped about a month after the build was approved for review rather than before it, which was compliance catching up with me rather than foresight, and I would rather say that plainly.</p>
+        <p>There is no analytics in this app, no telemetry and no event logging, so I cannot give you a retention number, an extraction accuracy rate, or anything at all about readmissions. Reducing thirty-day readmission is the goal I wrote at the top of the project. It is not a result I measured and I will not present it as one. What I can defend is what the design <em>prevents</em>: because no model output is written before a person confirms it, the worst case is a wrong card you can see and correct, not a wrong dose sitting quietly in your calendar.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="container cs-section" style="padding-bottom:var(--s-9)">
+    <h2 class="reveal">Final Takeaways &amp; Lessons Learned</h2>
+    <ul class="takeaways">
+      <li class="reveal">The best thing I designed is a step that slows the user down, and it is the only reason I would let this app anywhere near a medication schedule.</li>
+      <li class="reveal">A familiar tool beats a better one, which is why the system photo picker shipped and my ruler camera lasted a few hours.</li>
+      <li class="reveal">Precision I cannot stand behind is worse than a coarse answer someone can act on, so four words beat four decimal places.</li>
+      <li class="reveal">Interface built ahead of capability stops being a placeholder and quietly becomes a promise, which is why Send Report is mine to finish.</li>
+      <li class="reveal">Designing for a low-literacy reader is not the same as designing for a screen reader, and I assumed the first covered the second.</li>
+    </ul>
+  </section>
+
+  <div class="container">
+    <a class="next-band" href="/work/wellbeingabc/">
+      <span class="k">Next project</span>
+      <span class="n">wellbeingABC</span>
+    </a>
+  </div>
+
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="grid footer-a">
+      <span class="footer-mark">jayden yu</span>
+      <span class="footer-cta">Let&#x27;s build something.</span>
+      <span class="footer-mail"><a href="mailto:jiaweiyu2009@gmail.com">Reach out</a></span>
+    </div>
+    <hr class="footer-seam">
+    <div class="grid footer-b">
+      <nav aria-label="Footer">
+        <a href="/" aria-current="page">work</a>
+        <a href="/about/">about</a>
+        <a href="/resume/">resume</a>
+      </nav>
+      <div class="social">
+        <a href="https://www.linkedin.com/in/jaydenyu0210" rel="me noopener" target="_blank">LinkedIn</a>
+        <a href="https://github.com/jaydenyu0210" rel="me noopener" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>wellbeingABC — Jayden Yu</title>
+<meta name="description" content="wellbeingABC: a bilingual two-sided coaching marketplace with assessments, booking, payments and payouts. Designed and built solo in English and Chinese.">
+<link rel="canonical" href="https://jaydenyu0210.github.io/work/wellbeingabc/">
+<meta property="og:title" content="wellbeingABC — Jayden Yu">
+<meta property="og:description" content="wellbeingABC: a bilingual two-sided coaching marketplace with assessments, booking, payments and payouts. Designed and built solo in English and Chinese.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jaydenyu0210.github.io/work/wellbeingabc/">
+<meta property="og:image" content="https://jaydenyu0210.github.io/assets/wellbeingabc-thumb-1024.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+<link rel="icon" href="/assets/inurra.jpg">
+<script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="nav over-cover cover-light">
+  <div class="container nav-inner">
+    <a class="nav-mark" href="/">jayden yu</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu"><i aria-hidden="true"></i></button>
+    <nav class="nav-links" id="nav-links" aria-label="Primary">
+      <a href="/" aria-current="true">work</a>
+      <a href="/about/">about</a>
+      <a href="/resume/">resume</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+
+  <section class="cover cover-wellbeing">
+    <div class="container grid cover-grid">
+      <div class="cover-text">
+        <h1 class="reveal">wellbeingABC</h1>
+        <p class="cover-descriptor reveal" data-delay="1">Bilingual Two-Sided Coaching Marketplace</p>
+        <div class="cover-links reveal" data-delay="2">
+          <a class="btn" href="https://wellbeingabc.com" target="_blank" rel="noopener"><span>Visit wellbeingabc.com</span></a>
+        </div>
+      </div>
+      <div class="cover-art reveal rise" data-delay="1">
+<picture><source type="image/webp" srcset="/assets/wellbeingabc-thumb-512.webp 512w, /assets/wellbeingabc-thumb-768.webp 768w, /assets/wellbeingabc-thumb-1024.webp 1024w" sizes="(max-width: 991px) min(460px, calc(100vw - 48px)), min(660px, 50vw)"><img src="/assets/wellbeingabc-thumb-1024.jpg" srcset="/assets/wellbeingabc-thumb-512.jpg 512w, /assets/wellbeingabc-thumb-768.jpg 768w, /assets/wellbeingabc-thumb-1024.jpg 1024w" sizes="(max-width: 991px) min(460px, calc(100vw - 48px)), min(660px, 50vw)" alt="Promotional render of wellbeingABC on a laptop and a phone, showing the coaching homepage and its self-assessment cards under the product&#x27;s HappyGoose working mark." width="1024" height="1024" loading="eager" fetchpriority="high" decoding="async"></picture>
+      </div>
+    </div>
+  </section>
+
+  <section class="container cs-section">
+    <p class="eyebrow reveal">PROJECT OVERVIEW</p>
+    <h2 class="cs-overview-name reveal" data-delay="1">wellbeingABC — Coaching Marketplace</h2>
+    <div class="measure-wide reveal" data-delay="2">
+        <p>wellbeingABC is a coaching platform for adults who want to make a change and don&#x27;t know where to start. Anyone can take a standardized self-assessment, read the community journals, browse coaches and buy a session without ever making an account. On the other side of the same product, a coach publishes services, holds a calendar, chats with clients and gets paid out. It runs in English and Simplified Chinese, and the Chinese is not a layer painted over an English product. One caveat before you click through: the rename is only finished on the outside. The invoices, the emails and the domain say wellbeingABC, while the interface you land on still carries its working name, HappyGoose.</p>
+        <p>I wrote the spec first, seven documents with user stories, edge cases and target numbers, and then designed and built all of it on my own over about seven months. Every call was mine, including the ones I got wrong and had to undo. Those are the ones worth reading about.</p>
+    </div>
+    <div class="grid cs-meta">
+      <p class="col-6 v reveal">Product Designer, Product Architect, Developer</p>
+      <p class="col-6 v right reveal" data-delay="1">7 Months</p>
+    </div>
+    <p class="cs-meta-note reveal">Designed and built solo, and AI-paired throughout with Claude Code.</p>
+  </section>
+
+  <section class="container cs-section">
+    <h2 class="reveal">The Design Challenge</h2>
+    <div class="measure reveal" data-delay="1">
+        <p>Someone decides, late in the evening, that they want to do something about how the last few months have felt. They are not in crisis, they do not want a diagnosis, and they are nowhere near ready to book a therapist. They want to know whether what they are feeling has a name, and whether talking to somebody would help.</p>
+        <p>That person is at their least committed at exactly the moment a signup form usually appears, and asking for an email before telling them anything is a bad trade on a subject this personal. My own spec puts it plainly: the self-assessment is the platform&#x27;s most important way in, which only holds if it is nearly free to start. So the funnel had to run in the wrong order, giving the thing away first and asking for the account later.</p>
+        <p>The second problem was language. Translating the navigation does nothing for someone whose real barrier is a twenty-one item depression questionnaire written in a language they read slowly. So before I designed a screen I fixed four rules for myself: a guest can do everything except own an account, every page has to work at 375 pixels, who can see what lives in the database rather than in the interface, and <em>no user-facing string is ever hardcoded</em>. Everything after this is what I gave up to keep those four true.</p>
+    </div>
+  </section>
+
+
+  <section class="container cs-section">
+    <h2 class="reveal">Identifying User Pain Points</h2>
+    <div class="measure reveal" data-delay="1">
+      <p>There was no research budget and nobody to interview, and I would rather say that than dress up something I did not do. What I could do was write the audience down before I wrote any screens: seven spec documents with user stories and edge cases, plus a knowledge base written as customer-facing policy that fixed the boundaries the product has to respect. This is not therapy, the coaches are not licensed therapists, and the assessments are screening tools rather than diagnoses. Three pain points came out of that framing, and they decided most of what followed.</p>
+    </div>
+    <div class="grid cards">
+        <div class="col-4 card reveal rise" data-delay="0">
+          <span class="card-num">01</span>
+          <h3>Don&#x27;t Ask Them to Sign Up Before They Know Why</h3>
+          <p>Someone arrives worried about themselves, not shopping. Putting their own result behind a form takes away the one thing they came for, so the assessment, the coach catalog, the service page and the checkout all run with no account.</p>
+        </div>
+        <div class="col-4 card reveal rise" data-delay="1">
+          <span class="card-num">02</span>
+          <h3>A Coach Shouldn&#x27;t Need an Operations Team</h3>
+          <p>Coaches came for clients, not for admin. Publishing a service, holding a calendar, taking payment in two currencies and getting paid out had to be one workflow a coach runs alone, and every extra step was a reason to stop publishing.</p>
+        </div>
+        <div class="col-4 card reveal rise" data-delay="2">
+          <span class="card-num">03</span>
+          <h3>Translate the Questions, Not Just the Buttons</h3>
+          <p>A half-translated product tells a Chinese speaker they were an afterthought. So all ninety-two assessment items, every option label and every score band carry both languages, and the homepage headline was rebuilt rather than translated.</p>
+        </div>
+    </div>
+  </section>
+
+  <section class="container cs-section">
+    <h2 class="reveal">Four Decisions I Had to Live With</h2>
+    <div class="measure reveal" data-delay="1">
+      <p>Owning the whole thing means there is nobody to lose an argument to. These four calls set the shape of the product, and the price of each one is written next to it.</p>
+    </div>
+    <div class="run">
+        <div class="grid run-item">
+          <div class="col-6 reveal">
+            <h3>Guest is a role, not an anonymous edge case</h3>
+            <p class="lead">01</p>
+          </div>
+          <div class="col-6 body reveal" data-delay="1">
+            <p>I made the buyer optional at the database level rather than bolting a guest path on afterwards. An order can exist with no owner, carrying a name, an email and a confirmation number, and a trigger adopts it into an account the moment someone registers with that email. An assessment taken without an account is held in the browser and claimed on signup, so nobody loses their result by deciding to stay a guest. The cost is one deliberate hole in an otherwise strict permission model: the guest confirmation page has to read the order with an admin key, because a guest has no identity to check against. I narrowed that hole to a lookup by the unguessable checkout id and left it there, because a signup wall in front of a buy button is a worse problem than a careful exception.</p>
+          </div>
+        </div>
+        <div class="grid run-item">
+          <div class="col-6 reveal">
+            <h3>One portal, not two</h3>
+            <p class="lead">02</p>
+          </div>
+          <div class="col-6 body reveal" data-delay="1">
+            <p>The obvious build is a client app and a coach app. I listed what each side actually does and got the same list twice: write a journal, take an assessment, chat, buy something. So both roles share one dashboard and one sidebar, and being a coach adds four items to it. It cost a 260-line rewrite of the database&#x27;s visibility rules so the two roles could see across the line, and it earned that back the moment I needed a coach to be able to buy from another coach, which turned out to require nothing new.</p>
+          </div>
+        </div>
+        <div class="grid run-item">
+          <div class="col-6 reveal">
+            <h3>The buyer releases the money, not the coach</h3>
+            <p class="lead">03</p>
+          </div>
+          <div class="col-6 body reveal" data-delay="1">
+            <p>Sessions happen off the platform, so nothing the system can observe proves one took place. Payment therefore does not pay the coach: the order sits in a held state, the buyer gets an emailed link saying the session happened, and only that click moves money into the coach&#x27;s wallet. It is one more step for someone who has already paid, and I kept it because it is the only lever either party has when something goes wrong. It also introduced a threat I had not considered, which is that corporate mail scanners follow links to check them for malware, and a scanner hitting that link would have released money for a session the buyer never read about. The link now points at a page that posts from the browser, with a plain button behind it for anyone without JavaScript.</p>
+          </div>
+        </div>
+        <div class="grid run-item">
+          <div class="col-6 reveal">
+            <h3>I deleted the language picker, three times over</h3>
+            <p class="lead">04</p>
+          </div>
+          <div class="col-6 body reveal" data-delay="1">
+            <p>Coaches originally declared their language at signup, again on their profile, and again on every listing. I removed all three and replaced them with a classifier that reads what the coach already wrote, weighting Chinese characters double so a romanized name cannot drag a Chinese listing into the English catalog. I took out the silent server-side filter at the same time, because narrowing someone&#x27;s catalog with no visible way to turn it off is a surprise rather than a feature. Two hundred and ninety-seven lines came out. What went with them is a coach&#x27;s ability to say <em>this listing is in English but I coach in both</em>, and I would have to give that back the day it mattered to a real one.</p>
+          </div>
+        </div>
+    </div>
+  </section>
+
+  <section class="container cs-section">
+    <h2 class="reveal">The money path, and where it waits</h2>
+    <div class="flow">
+        <div class="flow-step reveal rise" data-delay="0">
+          <span class="n">01</span>
+          <span class="l">Assessment</span>
+          <span class="d">No account. Nothing stored.</span>
+        </div>
+        <div class="flow-step reveal rise" data-delay="1">
+          <span class="n">02</span>
+          <span class="l">Browse</span>
+          <span class="d">Catalog filtered to your language.</span>
+        </div>
+        <div class="flow-step reveal rise" data-delay="2">
+          <span class="n">03</span>
+          <span class="l">Book</span>
+          <span class="d">Pick a real, unbooked slot.</span>
+        </div>
+        <div class="flow-step reveal rise" data-delay="3">
+          <span class="n">04</span>
+          <span class="l">Pay</span>
+          <span class="d">Card. Price re-read server side.</span>
+        </div>
+        <div class="flow-step is-gate reveal rise" data-delay="3">
+          <span class="n">05</span>
+          <span class="l">Held</span>
+          <span class="d">Order pending. Coach not paid yet.</span>
+        </div>
+        <div class="flow-step is-gate reveal rise" data-delay="3">
+          <span class="n">06</span>
+          <span class="l">Buyer confirms</span>
+          <span class="d">One emailed link releases the money.</span>
+        </div>
+        <div class="flow-step reveal rise" data-delay="3">
+          <span class="n">07</span>
+          <span class="l">Wallet</span>
+          <span class="d">Payout credited. Withdraw at $100.</span>
+        </div>
+    </div>
+  </section>
+
+  <section class="container cs-section">
+    <h2 class="reveal">Rethinking Who Can See What</h2>
+    <div class="measure reveal" data-delay="1">
+      <p>The most personal things in this product are a journal entry and a depression score, so the control that decides who sees them mattered to me more than anything on the checkout path. I shipped it with four states: private, shared with one specific coach, visible to coaches you follow, and public. It is the piece of this product I got most wrong, and the piece I am now most sure about.</p>
+    </div>
+    <div class="aside-block reveal">
+      <p><span class="aside-label">What Went Wrong &mdash;</span> On a single day at the end of January I shipped four separate database migrations trying to fix it. Coaches could not see entries clients had shared with them, because the rule that proved the relationship depended on reading a row the coach was not allowed to read. Worse, clients could not change the visibility of their own assessment result at all, because the update rule was simply missing, so the control rendered, saved nothing, and said nothing. The most sensitive control in the product had been <em>decorative</em> since the day it shipped.</p>
+    </div>
+    <div class="aside-block reveal">
+      <p><span class="aside-label">How I Worked to Pivot &mdash;</span> I could have written a fifth rule. Instead I removed a state: the fourth one existed only because I could not decide whether sharing should follow the person or the purchase, so I merged them. Followed coaches now means followed or hired, shared with one coach went away entirely, and a client is left with three choices they can hold in their head, private, my coaches, everyone. Private stayed the default in the database, so if I get a rule wrong again the failure shows someone less than they asked for rather than more.</p>
+    </div>
+  </section>
+
+  <section class="container cs-section">
+    <h2 class="reveal">What I Traded Away</h2>
+    <div class="measure reveal" data-delay="1">
+      <p>Some of these were the right call. Some are debt, and I would rather name them here than have someone find them.</p>
+    </div>
+    <div class="run">
+        <div class="grid run-item">
+          <div class="col-6 reveal">
+            <h3>Guest results are never saved</h3>
+            <p class="lead">01</p>
+          </div>
+          <div class="col-6 body reveal" data-delay="1">
+            <p>The product promises that an assessment taken without an account is not stored anywhere, and it keeps that promise: the score is computed in the browser and never sent. The result lives in local storage until the person registers, at which point it moves quietly into their new account and tells them it did. Someone in a private window loses their result, and I took that over keeping a table of unclaimed depression scores belonging to people who never agreed to one.</p>
+          </div>
+        </div>
+        <div class="grid run-item">
+          <div class="col-6 reveal">
+            <h3>The refund is written and the policy is not</h3>
+            <p class="lead">02</p>
+          </div>
+          <div class="col-6 body reveal" data-delay="1">
+            <p>The path that handles a refund is built and tested down to what happens when the coach has already withdrawn the money. What does not exist is a cancellation window, a refund button, or any rule about how late is too late. The knowledge base says so out loud, that cancellations are coordinated with your coach, and that is an honest placeholder rather than a design.</p>
+          </div>
+        </div>
+        <div class="grid run-item">
+          <div class="col-6 reveal">
+            <h3>The one control I never translated</h3>
+            <p class="lead">03</p>
+          </div>
+          <div class="col-6 body reveal" data-delay="1">
+            <p>The visibility selector hardcodes Private, Followed Coaches Only and Public in English, and the guest result screen picks its language with inline conditionals instead of the translation system everything else uses. In a product whose own first rule is that no user-facing string may be hardcoded, the two places I broke it are the two with the most at stake. About two hundred of the Chinese strings also still have not been read by a native speaker.</p>
+          </div>
+        </div>
+        <div class="grid run-item">
+          <div class="col-6 reveal">
+            <h3>A finished screen nobody can reach</h3>
+            <p class="lead">04</p>
+          </div>
+          <div class="col-6 body reveal" data-delay="1">
+            <p>There is a coach&#x27;s view of a single client, showing their purchases, the journals they chose to share and a way into the chat, fully built and permission-guarded. Nothing links to it, because the client list it was meant to hang off sits in the spec I wrote and was never built. <em>Ninety percent finished and zero percent reachable is worse than not starting</em>, and it is the plainest evidence that scoping myself is the thing I am least good at.</p>
+          </div>
+        </div>
+    </div>
+  </section>
+
+  <section class="container cs-section">
+    <h2 class="reveal">The Visual Language</h2>
+    <div class="grid spec">
+      <div class="col-6 reveal">
+        <p class="spec-label">Typeface</p>
+        <p class="specimen">Inter, with a serif italic for every title</p>
+        <p class="measure" style="margin-top:var(--s-3)">Titles run light and tracked tight with the subject set in serif italic. Long-form prose gets its own 17px / 1.75 rule.</p>
+      </div>
+      <div class="col-6 reveal" data-delay="1">
+        <p class="spec-label">Color</p>
+        <div class="swatches">
+          <span class="swatch"><i style="background:#3a7854" aria-hidden="true"></i><span>Primary</span></span>
+          <span class="swatch"><i style="background:#5f725f" aria-hidden="true"></i><span>Sage</span></span>
+          <span class="swatch"><i style="background:#d48a64" aria-hidden="true"></i><span>Warmth</span></span>
+          <span class="swatch"><i style="background:#f7e6dc" aria-hidden="true"></i><span>Clay</span></span>
+          <span class="swatch"><i style="background:#fbfaf6" aria-hidden="true"></i><span>Ground</span></span>
+        </div>
+        <p class="measure" style="margin-top:var(--s-4)">A desaturated green and a terracotta on a warm off-white. Payment brands are the only place the palette gives way.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="container cs-section">
+    <h2 class="reveal">What Shipped</h2>
+    <div class="grid" style="margin-top:var(--s-6)">
+      <div class="col-6 stats">
+        <div class="stat reveal">
+          <span class="lead">Designed and built across a guest surface, one shared portal and an admin console</span>
+          <strong class="value">53 screens</strong>
+        </div>
+        <div class="stat reveal">
+          <span class="lead">Written before any of it existed, with user stories, edge cases and target numbers</span>
+          <strong class="value">7 spec documents</strong>
+        </div>
+        <div class="stat reveal">
+          <span class="lead">Held in exact parity across English and Chinese by an automated test</span>
+          <strong class="value">865 keys per locale</strong>
+        </div>
+        <div class="stat reveal">
+          <span class="lead">Found in my own build and closed with a regression test</span>
+          <strong class="value">7 money-losing defects</strong>
+        </div>
+      </div>
+      <div class="col-6 reveal" data-delay="1">
+        <p>Fifty-three screens across a guest surface, a shared portal for both roles and an admin console. Both languages kept in parity by a test rather than by discipline. Card payments and a Chinese payment path, a wallet ledger, withdrawals and refunds, and a WeChat mini program with seven screens that was built and never launched, which I would rather write here than let a screenshot imply otherwise. One person, about seven months, 308 commits, and the spec written first.</p>
+        <p>What I cannot tell you is how it performed. I have no user counts, no conversion rates and no revenue figures, and I am not going to invent them. The targets in my own spec, thirty percent of visitors opening an assessment and seventy percent finishing one, are numbers the design was aimed at and not numbers I can show it hit. What I can show is the other kind of outcome: seven distinct ways this product could have taken someone&#x27;s money and lost it, among them a race that credited a coach twice for one approval, a payment retry that quietly invalidated the buyer&#x27;s emailed approval link, a refund that never took the money back out of the wallet, and a withdrawal that stamped one transfer id across every coach&#x27;s rows and then did nothing at all. Each one was found in my own build, fixed, and pinned down with a test so it cannot come back.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="container cs-section" style="padding-bottom:var(--s-9)">
+    <h2 class="reveal">Final Takeaways</h2>
+    <ul class="takeaways">
+      <li class="reveal">A control that fails silently is worse than a control that is not there, and the sharing selector looked like it worked the entire time it did nothing.</li>
+      <li class="reveal">When a permission model breaks in four places on the same day that is not four bugs, and the fix was one state fewer rather than one rule more.</li>
+      <li class="reveal">If a person has already told you something by writing it, asking them again in a picker is the bug.</li>
+      <li class="reveal">Guests are a role with their own needs rather than logged-in people minus an account, and designing them that way changed the database before it changed a screen.</li>
+      <li class="reveal">Owning every decision means none of them get blocked, and also that none of them get challenged, which is how a fully built screen ends up with nothing linking to it.</li>
+    </ul>
+  </section>
+
+  <div class="container">
+    <a class="next-band" href="/work/inurra/">
+      <span class="k">Next project</span>
+      <span class="n">iNurra</span>
+    </a>
+  </div>
+
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="grid footer-a">
+      <span class="footer-mark">jayden yu</span>
+      <span class="footer-cta">Let&#x27;s build something.</span>
+      <span class="footer-mail"><a href="mailto:jiaweiyu2009@gmail.com">Reach out</a></span>
+    </div>
+    <hr class="footer-seam">
+    <div class="grid footer-b">
+      <nav aria-label="Footer">
+        <a href="/" aria-current="page">work</a>
+        <a href="/about/">about</a>
+        <a href="/resume/">resume</a>
+      </nav>
+      <div class="social">
+        <a href="https://www.linkedin.com/in/jaydenyu0210" rel="me noopener" target="_blank">LinkedIn</a>
+        <a href="https://github.com/jaydenyu0210" rel="me noopener" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

@@ -1,573 +1,95 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jayden Yu — I build AI SaaS products</title>
-<meta name="description" content="Jayden Yu builds AI SaaS products — Archspace, wellbeingABC, tomatomeet, iNurra.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jayden Yu — Product Designer</title>
+<meta name="description" content="Jayden Yu, a product designer who builds consumer products from nothing and owns them end to end. Case studies: iNurra and wellbeingABC.">
+<link rel="canonical" href="https://jaydenyu0210.github.io/">
+<meta property="og:title" content="Jayden Yu — Product Designer">
+<meta property="og:description" content="Jayden Yu, a product designer who builds consumer products from nothing and owns them end to end. Case studies: iNurra and wellbeingABC.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jaydenyu0210.github.io/">
+<meta property="og:image" content="https://jaydenyu0210.github.io/assets/inurra-thumb-1024.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --paper: #FAF9F5;
-    --ink: #131311;
-    --ink-soft: #4a4a45;
-    --ink-faint: #8b8b83;
-    --hairline: rgba(19, 19, 17, 0.14);
-    --accent: #d9532b;
-    --serif: "Instrument Serif", Georgia, serif;
-    --sans: "Instrument Sans", -apple-system, sans-serif;
-    --mono: "Spline Sans Mono", ui-monospace, monospace;
-    --ease: cubic-bezier(0.22, 1, 0.36, 1);
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    background: var(--paper);
-    color: var(--ink);
-    font-family: var(--sans);
-    font-size: 17px;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
-  }
-
-  /* grain */
-  body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 999;
-    opacity: 0.35;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)'/%3E%3C/svg%3E");
-  }
-
-  ::selection { background: var(--ink); color: var(--paper); }
-
-  a { color: inherit; text-decoration: none; }
-
-  .wrap {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 clamp(20px, 4vw, 48px);
-  }
-
-  /* ---------- nav ---------- */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    background: color-mix(in srgb, var(--paper) 88%, transparent);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--hairline);
-  }
-  nav .wrap {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 60px;
-  }
-  .nav-name {
-    font-family: var(--mono);
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
-  .nav-name span { color: var(--accent); }
-  .nav-links {
-    display: flex;
-    gap: clamp(16px, 3vw, 36px);
-  }
-  .nav-links a {
-    font-family: var(--mono);
-    font-size: 12px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-    transition: color 0.25s;
-  }
-  .nav-links a:hover { color: var(--accent); }
-
-  /* load-in */
-  .rise {
-    opacity: 0;
-    transform: translateY(28px);
-    animation: rise 1s var(--ease) forwards;
-  }
-  @keyframes rise {
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  /* ---------- work (opens the page) ---------- */
-  main { padding-top: 60px; }
-
-  .about-top {
-    padding: clamp(48px, 8vh, 90px) 0 clamp(40px, 7vh, 72px);
-  }
-
-  /* ---------- projects ---------- */
-  .project {
-    display: block;
-    border-top: 1px solid var(--hairline);
-    padding: clamp(28px, 4.5vh, 48px) 0;
-  }
-  .project:last-of-type { border-bottom: 1px solid var(--hairline); }
-
-  .project-row {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    gap: clamp(18px, 3.5vw, 44px);
-    align-items: start;
-  }
-  .project-icon {
-    width: clamp(60px, 8vw, 92px);
-    height: clamp(60px, 8vw, 92px);
-    border-radius: 24%;
-    border: 1px solid var(--hairline);
-    object-fit: cover;
-    background: #fff;
-    display: block;
-    transition: transform 0.5s var(--ease), box-shadow 0.5s var(--ease);
-  }
-  .project:hover .project-icon {
-    transform: rotate(-4deg) scale(1.05);
-    box-shadow: 0 14px 32px -14px rgba(19, 19, 17, 0.35);
-  }
-
-  .project-num {
-    font-family: var(--mono);
-    font-size: 12px;
-    letter-spacing: 0.1em;
-    color: var(--ink-faint);
-    display: block;
-    margin-bottom: 6px;
-    transition: color 0.35s;
-  }
-  .project-title {
-    font-family: var(--serif);
-    font-weight: 400;
-    font-size: clamp(32px, 4.5vw, 58px);
-    line-height: 1.05;
-    letter-spacing: -0.01em;
-    transition: transform 0.45s var(--ease);
-    transform-origin: left center;
-  }
-  .project-arrow {
-    font-family: var(--serif);
-    font-size: clamp(26px, 3vw, 40px);
-    color: var(--ink-faint);
-    transition: transform 0.45s var(--ease), color 0.35s;
-    display: inline-block;
-    align-self: center;
-  }
-  .project-desc {
-    max-width: 56ch;
-    color: var(--ink-soft);
-    font-size: 22px;
-    margin-top: 12px;
-  }
-  .project:hover .project-title { transform: translateX(10px); }
-  .project:hover .project-arrow {
-    transform: translate(6px, 0) rotate(-45deg);
-    color: var(--accent);
-  }
-  .project:hover .project-num { color: var(--accent); }
-
-  /* ---------- about ---------- */
-  .about-top p {
-    font-family: var(--serif);
-    font-size: clamp(26px, 3.4vw, 44px);
-    line-height: 1.35;
-    max-width: 26ch;
-  }
-  .about-top p em { font-style: italic; color: var(--accent); }
-
-  /* ---------- contact ---------- */
-  footer {
-    border-top: 1px solid var(--hairline);
-    padding: clamp(70px, 14vh, 150px) 0 40px;
-  }
-  .contact-kicker {
-    font-family: var(--mono);
-    font-size: 13px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--ink-faint);
-    margin-bottom: 20px;
-  }
-  .contact-link {
-    font-family: var(--serif);
-    font-size: clamp(26px, 4vw, 52px);
-    line-height: 1.05;
-    letter-spacing: -0.015em;
-    display: inline-block;
-    position: relative;
-    word-break: break-all;
-  }
-  .contact-link::after {
-    content: "";
-    position: absolute;
-    left: 0; bottom: 4px;
-    width: 100%;
-    height: 2px;
-    background: var(--accent);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.5s var(--ease);
-  }
-  .contact-link:hover::after { transform: scaleX(1); }
-  .footer-bottom {
-    margin-top: clamp(60px, 10vh, 110px);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    border-top: 1px solid var(--hairline);
-    padding-top: 24px;
-  }
-  .footer-bottom, .footer-social a {
-    font-family: var(--mono);
-    font-size: 12px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--ink-faint);
-  }
-  .footer-social { display: flex; gap: 28px; }
-  .footer-social a { transition: color 0.25s; }
-  .footer-social a:hover { color: var(--accent); }
-
-  /* ---------- tools trigger ---------- */
-  .tools-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 16px;
-    padding: 7px 14px;
-    border: 1px solid var(--hairline);
-    border-radius: 999px;
-    background: transparent;
-    color: var(--ink-soft);
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: color 0.25s, border-color 0.25s, background 0.25s;
-  }
-  .tools-btn::before {
-    content: "";
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background: var(--accent);
-    opacity: 0.75;
-  }
-  .tools-btn:hover {
-    color: var(--ink);
-    border-color: var(--accent);
-    background: color-mix(in srgb, var(--accent) 8%, transparent);
-  }
-  .tools-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-
-  /* ---------- modal ---------- */
-  .modal {
-    position: fixed;
-    inset: 0;
-    z-index: 200;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-  }
-  .modal.open { display: flex; }
-  .modal-scrim {
-    position: absolute;
-    inset: 0;
-    background: rgba(19, 19, 17, 0.42);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    animation: fade 0.3s var(--ease) forwards;
-  }
-  @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
-  .modal-card {
-    position: relative;
-    background: var(--paper);
-    border: 1px solid var(--hairline);
-    border-radius: 6px;
-    box-shadow: 0 40px 80px -30px rgba(19, 19, 17, 0.5);
-    width: min(720px, 100%);
-    max-height: min(80vh, 760px);
-    overflow-y: auto;
-    padding: clamp(26px, 4vw, 40px);
-    animation: pop 0.4s var(--ease) forwards;
-  }
-  @keyframes pop {
-    from { opacity: 0; transform: translateY(18px) scale(0.985); }
-    to { opacity: 1; transform: none; }
-  }
-  .modal-kicker {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--ink-faint);
-  }
-  .modal-title {
-    font-family: var(--serif);
-    font-size: clamp(28px, 4vw, 42px);
-    line-height: 1.1;
-    margin: 6px 0 4px;
-  }
-  .modal-close {
-    position: absolute;
-    top: 16px; right: 18px;
-    background: none;
-    border: none;
-    font-family: var(--serif);
-    font-size: 26px;
-    line-height: 1;
-    color: var(--ink-faint);
-    cursor: pointer;
-    transition: color 0.25s, transform 0.3s var(--ease);
-  }
-  .modal-close:hover { color: var(--accent); transform: rotate(90deg); }
-  .tool-group { margin-top: 26px; }
-  .tool-group h4 {
-    font-family: var(--mono);
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--ink-faint);
-    padding-bottom: 8px;
-    border-bottom: 1px solid var(--hairline);
-    margin-bottom: 12px;
-  }
-  .tool-chips { display: flex; flex-wrap: wrap; gap: 8px; }
-  .tool-chip {
-    font-size: 14px;
-    line-height: 1.2;
-    padding: 6px 12px;
-    border: 1px solid var(--hairline);
-    border-radius: 999px;
-    color: var(--ink-soft);
-    background: #fff;
-  }
-  body.locked { overflow: hidden; }
-
-  /* scroll reveal */
-  .reveal {
-    opacity: 0;
-    transform: translateY(32px);
-    transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
-  }
-  .reveal.in { opacity: 1; transform: translateY(0); }
-
-  @media (max-width: 720px) {
-    .project-row { grid-template-columns: auto 1fr; }
-    .project-arrow { display: none; }
-    .nav-links a:not(:last-child) { display: none; }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after { animation: none !important; transition: none !important; }
-    .rise, .reveal { opacity: 1; transform: none; }
-  }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+<link rel="icon" href="/assets/inurra.jpg">
+<script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
-
-<nav>
-  <div class="wrap">
-    <a href="#" class="nav-name">Jayden&nbsp;Yu</a>
-    <div class="nav-links">
-      <a href="#work">Work</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-      <a href="https://www.linkedin.com/in/jaydenyu0210" target="_blank" rel="noopener">LinkedIn</a>
-    </div>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="nav-mark" href="/">jayden yu</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu"><i aria-hidden="true"></i></button>
+    <nav class="nav-links" id="nav-links" aria-label="Primary">
+      <a href="/" aria-current="page">work</a>
+      <a href="/about/">about</a>
+      <a href="/resume/">resume</a>
+    </nav>
   </div>
-</nav>
+</header>
+<main id="main">
 
-<main class="wrap" id="work">
-  <div class="about-top" id="about">
-    <p class="rise" style="animation-delay:0.1s">I build <em>AI products</em> from scratch that actually help people.</p>
-  </div>
-
-  <a class="project rise" style="animation-delay:0.3s" href="https://github.com/jaydenyu0210/archspace" target="_blank" rel="noopener">
-    <div class="project-row">
-      <img class="project-icon" src="assets/archspace.png" alt="Archspace app icon">
-      <div>
-        <span class="project-num">01</span>
-        <span class="project-title">Archspace</span>
-        <p class="project-desc">Node-based workflows for architecture and construction. Wire up a graph on a canvas — write a brief, generate a scheme, check it against code, export a real DXF drawing — then press Run. Workflows save as plain text that reads well in a git diff, so a colleague can review one in a pull request instead of it being locked inside an application.</p>
-        <button type="button" class="tools-btn" data-tools="archspace">Tools used</button>
-      </div>
-      <span class="project-arrow">→</span>
+  <section class="container hero">
+    <h1 class="hero-name reveal fade">Jayden Yu</h1>
+    <p class="hero-role reveal fade" data-delay="1"><em>Product Designer</em></p>
+    <div class="hero-copy reveal fade" data-delay="2">
+        <p>I&#x27;m a product designer. I build consumer software from zero — the first idea through to the thing people actually use.</p>
+        <p>I take on more scope than is sensible for one person, and then I make sure the thing actually ships.</p>
     </div>
-  </a>
+  </section>
 
-  <a class="project rise" style="animation-delay:0.4s" href="https://apps.apple.com/us/app/inurra/id6758828697" target="_blank" rel="noopener">
-    <div class="project-row">
-      <img class="project-icon" src="assets/inurra.jpg" alt="iNurra app icon">
-      <div>
-        <span class="project-num">02</span>
-        <span class="project-title">iNurra</span>
-        <p class="project-desc">An AI-powered post-discharge care app for elderly patients — a visual cognitive calendar, medication decoder, and symptom tracker built to close the 30-day hospital readmission gap.</p>
-        <button type="button" class="tools-btn" data-tools="inurra">Tools used</button>
-      </div>
-      <span class="project-arrow">→</span>
+  <section class="container" aria-labelledby="work-h">
+    <h2 class="visually-hidden" id="work-h">Selected work</h2>
+    <div class="work-grid">
+      <a class="thumb reveal fade" href="/work/inurra/">
+        <picture><source type="image/webp" srcset="/assets/inurra-thumb-512.webp 512w, /assets/inurra-thumb-768.webp 768w, /assets/inurra-thumb-1024.webp 1024w" sizes="(max-width: 767px) calc(100vw - 48px), min(673px, 50vw)"><img src="/assets/inurra-thumb-1024.jpg" srcset="/assets/inurra-thumb-512.jpg 512w, /assets/inurra-thumb-768.jpg 768w, /assets/inurra-thumb-1024.jpg 1024w" sizes="(max-width: 767px) calc(100vw - 48px), min(673px, 50vw)" alt="Promotional render of iNurra on an iPhone, showing a dose reminder, today&#x27;s readings and shortcuts into the records." width="1024" height="1024" loading="eager" fetchpriority="high" decoding="async"></picture>
+        <span class="thumb-meta">
+          <span class="t">iNurra</span>
+          <span class="c">Consumer health · iOS app</span>
+        </span>
+      </a>
+      <a class="thumb reveal fade" href="/work/wellbeingabc/">
+        <picture><source type="image/webp" srcset="/assets/wellbeingabc-thumb-512.webp 512w, /assets/wellbeingabc-thumb-768.webp 768w, /assets/wellbeingabc-thumb-1024.webp 1024w" sizes="(max-width: 767px) calc(100vw - 48px), min(673px, 50vw)"><img src="/assets/wellbeingabc-thumb-1024.jpg" srcset="/assets/wellbeingabc-thumb-512.jpg 512w, /assets/wellbeingabc-thumb-768.jpg 768w, /assets/wellbeingabc-thumb-1024.jpg 1024w" sizes="(max-width: 767px) calc(100vw - 48px), min(673px, 50vw)" alt="Promotional render of wellbeingABC on a laptop and a phone, showing the coaching homepage and its self-assessment cards under the product&#x27;s HappyGoose working mark." width="1024" height="1024" loading="eager" fetchpriority="high" decoding="async"></picture>
+        <span class="thumb-meta">
+          <span class="t">wellbeingABC</span>
+          <span class="c">Two-sided marketplace · Web</span>
+        </span>
+      </a>
     </div>
-  </a>
+  </section>
 
-  <a class="project rise" style="animation-delay:0.5s" href="https://wellbeingABC.com" target="_blank" rel="noopener">
-    <div class="project-row">
-      <img class="project-icon" src="assets/wellbeing.png" alt="wellbeingABC goose logo">
-      <div>
-        <span class="project-num">03</span>
-        <span class="project-title">wellbeingABC.com</span>
-        <p class="project-desc">A dual-sided coaching marketplace connecting clients with trained coaches for their wellness goals — role-based dashboards, real-time chat, personal journaling, and clinically-informed self-assessments.</p>
-        <button type="button" class="tools-btn" data-tools="wellbeing">Tools used</button>
-      </div>
-      <span class="project-arrow">→</span>
-    </div>
-  </a>
+  <section class="container statement" aria-label="Approach">
+    <p class="reveal">I build the <em>whole</em> product,</p>
+    <p class="reveal" data-delay="1">not a slice of it.</p>
+  </section>
 
-  <a class="project rise" style="animation-delay:0.6s" href="https://tomatomeet.com" target="_blank" rel="noopener">
-    <div class="project-row">
-      <img class="project-icon" src="assets/tomatomeet.png" alt="tomatomeet logo">
-      <div>
-        <span class="project-num">04</span>
-        <span class="project-title">tomatomeet.com</span>
-        <p class="project-desc">No-login WebRTC video conferencing with real-time transcription, GPT-4 meeting insights, and automated email recaps — join a call, leave with the notes already written.</p>
-        <button type="button" class="tools-btn" data-tools="tomatomeet">Tools used</button>
-      </div>
-      <span class="project-arrow">→</span>
-    </div>
-  </a>
 </main>
-
-<footer id="contact">
-  <div class="wrap">
-    <p class="contact-kicker reveal">Have an idea worth building?</p>
-    <a class="contact-link reveal" href="mailto:jiaweiyu2009@gmail.com">jiaweiyu2009@gmail.com</a>
-    <div class="footer-bottom">
-      <span>© 2026 Jayden Yu</span>
-      <div class="footer-social">
-        <a href="https://github.com/jaydenyu0210" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://www.linkedin.com/in/jaydenyu0210" target="_blank" rel="noopener">LinkedIn</a>
+<footer class="site-footer">
+  <div class="container">
+    <div class="grid footer-a">
+      <span class="footer-mark">jayden yu</span>
+      <span class="footer-cta">Let&#x27;s build something.</span>
+      <span class="footer-mail"><a href="mailto:jiaweiyu2009@gmail.com">Reach out</a></span>
+    </div>
+    <hr class="footer-seam">
+    <div class="grid footer-b">
+      <nav aria-label="Footer">
+        <a href="/" aria-current="page">work</a>
+        <a href="/about/">about</a>
+        <a href="/resume/">resume</a>
+      </nav>
+      <div class="social">
+        <a href="https://www.linkedin.com/in/jaydenyu0210" rel="me noopener" target="_blank">LinkedIn</a>
+        <a href="https://github.com/jaydenyu0210" rel="me noopener" target="_blank">GitHub</a>
       </div>
     </div>
   </div>
 </footer>
-
-<div class="modal" id="toolsModal" role="dialog" aria-modal="true" aria-labelledby="toolsTitle">
-  <div class="modal-scrim" data-close></div>
-  <div class="modal-card">
-    <button class="modal-close" type="button" data-close aria-label="Close">×</button>
-    <span class="modal-kicker">Tools used</span>
-    <h3 class="modal-title" id="toolsTitle"></h3>
-    <div id="toolsBody"></div>
-  </div>
-</div>
-
-<script>
-  const TOOLS = {
-    wellbeing: {
-      title: "wellbeingABC.com",
-      groups: [
-        ["Product", ["Next.js", "TypeScript", "Tailwind CSS", "WeChat Mini Program"]],
-        ["Data & payments", ["Supabase", "PostgreSQL", "Stripe"]],
-        ["Infrastructure", ["Vercel", "AWS EC2", "Docker"]],
-        ["Built with", ["Claude Code"]]
-      ]
-    },
-    inurra: {
-      title: "iNurra",
-      groups: [
-        ["Mobile", ["React Native", "Expo", "TypeScript"]],
-        ["AI", ["Google Gemini"]],
-        ["Backend", ["Supabase", "PostgreSQL", "Spring Boot"]],
-        ["Built with", ["Claude Code"]]
-      ]
-    },
-    archspace: {
-      title: "Archspace",
-      groups: [
-        ["Desktop app", ["Electron", "React", "TypeScript", "React Flow", "Zustand", "Tailwind CSS"]],
-        ["Engine", ["Node.js", "YAML workflow documents", "pnpm monorepo", "Vite", "Vitest"]],
-        ["AI", ["Vercel AI SDK", "Anthropic Claude", "Model Context Protocol"]],
-        ["AEC", ["DXF export", "IFC geometry", "Autodesk Revit"]],
-        ["Built with", ["Claude Code"]]
-      ]
-    },
-    tomatomeet: {
-      title: "tomatomeet.com",
-      groups: [
-        ["Product", ["Next.js", "TypeScript", "Vercel"]],
-        ["Real-time video", ["WebRTC", "mediasoup SFU", "Socket.IO"]],
-        ["Backend & AI", ["Node.js", "Prisma", "PostgreSQL", "OpenAI GPT-4", "Resend"]],
-        ["Built with", ["Claude Code"]]
-      ]
-    }
-  };
-
-  const modal = document.getElementById("toolsModal");
-  const modalTitle = document.getElementById("toolsTitle");
-  const modalBody = document.getElementById("toolsBody");
-  let lastTrigger = null;
-
-  function openTools(key, trigger) {
-    const data = TOOLS[key];
-    if (!data) return;
-    lastTrigger = trigger;
-    modalTitle.textContent = data.title;
-    modalBody.innerHTML = data.groups.map(([label, items]) => `
-      <div class="tool-group">
-        <h4>${label}</h4>
-        <div class="tool-chips">${items.map((t) => `<span class="tool-chip">${t}</span>`).join("")}</div>
-      </div>`).join("");
-    modal.classList.add("open");
-    document.body.classList.add("locked");
-    modal.querySelector(".modal-close").focus();
-  }
-
-  function closeTools() {
-    modal.classList.remove("open");
-    document.body.classList.remove("locked");
-    if (lastTrigger) lastTrigger.focus();
-  }
-
-  document.querySelectorAll(".tools-btn").forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      openTools(btn.dataset.tools, btn);
-    });
-  });
-  modal.querySelectorAll("[data-close]").forEach((el) => el.addEventListener("click", closeTools));
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && modal.classList.contains("open")) closeTools();
-  });
-
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach((e) => {
-      if (e.isIntersecting) {
-        e.target.classList.add("in");
-        io.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.12 });
-  document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
-</script>
-
+<script src="/assets/site.js" defer></script>
 </body>
 </html>
