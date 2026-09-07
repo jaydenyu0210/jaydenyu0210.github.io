@@ -526,14 +526,6 @@ em, i { font-style: italic; }
   font-size: var(--t-body); color: var(--muted-strong);
 }
 
-/* draft markers — deliberately visible so they are easy to find and strip */
-.draft-mark {
-  font-size: 0.85em;
-  color: var(--accent-text);
-  border-bottom: 1px dotted currentColor;
-  white-space: nowrap;
-}
-
 /* my-role and future-metrics lists */
 .role-list, .metric-list { margin-top: var(--s-4); }
 .role-list li, .metric-list li {
