@@ -51,10 +51,10 @@
 
   <section class="container cs-section">
     <p class="eyebrow reveal">PROJECT OVERVIEW</p>
-    <h2 class="cs-overview-name reveal" data-delay="1">One photo into a home care plan</h2>
+    <h2 class="cs-overview-name reveal" data-delay="1">iNurra — a patient-first home-care tool</h2>
     <div class="measure-wide reveal" data-delay="2">
-        <p>Point the camera at a pill bottle, a discharge sheet or a rash. iNurra reads it back in plain words and puts the doses on a calendar.</p>
-        <p>It is on the App Store, and I did all of it. The research, the screens, the words on them, the store submission. I am not a clinician, so I designed around what a person is holding when they get home.</p>
+        <p>iNurra helps people understand and follow complex care instructions after they leave a hospital or clinic. It uses AI-assisted document and image analysis to turn the paperwork someone is already holding into a plain-language visual care plan.</p>
+        <p>It is a support tool, not a medical device. It does not diagnose. Everything it reads from a photo has to be reviewed and confirmed by the person before it becomes part of their plan, and anything urgent or unclear goes to a qualified healthcare professional.</p>
     </div>
     <div class="grid cs-meta">
       <p class="col-6 v reveal">Sole designer and builder</p>
@@ -64,90 +64,210 @@
   </section>
 
   <section class="container cs-section">
-    <h2 class="reveal">Three in the afternoon</h2>
+    <h2 class="reveal">Problem</h2>
     <div class="measure reveal" data-delay="1">
-        <p>A man leaves the hospital at three in the afternoon, holding a folder. Inside is a page of instructions in small type. Three prescriptions, a follow-up date, and a line about checking his blood pressure daily.</p>
-        <p>Two of the pills are white. The directions say b.i.d. and t.i.d. Nobody stayed long enough to say that one means twice a day and the other three times.</p>
-        <p>By Thursday he has missed a dose. On paper that is a patient who did not follow the plan. In his kitchen it is a tired man who cannot tell two white pills apart. The job was never to remind him. It was to <em>translate</em>.</p>
+        <p>Someone leaves the hospital holding a folder. Inside are several medications on different schedules, brand names sitting next to generic names, a follow-up appointment, and a line telling them to check their blood pressure every day.</p>
+        <p>They may also need to watch a wound, read documents written for clinicians rather than for them, and work out on their own when something is worth a phone call.</p>
+        <p>When those instructions are hard to follow, doses get missed and appointments slip. Some people end up back in hospital. Hospitals carry real cost and operational pressure from readmissions that could have been avoided. The goal was to turn that lose-lose into something better for patients, caregivers and care teams.</p>
     </div>
   </section>
 
   <section class="container cs-section">
-    <h2 class="reveal">Eight people, their own paperwork</h2>
+    <h2 class="reveal">My Role</h2>
     <div class="measure reveal" data-delay="1">
-      <p>No budget and no access to patients, so I asked family and friends of family. Over two weeks I sat with eight people. Four had come home from hospital that year, four had nursed someone who had. I asked each to read their own paperwork aloud and tell me what it meant.</p>
+      <p>I designed and built iNurra on my own over about four months. The idea came out of my work as a registered nurse, watching people go home with plans they could not realistically follow.</p>
+        <ul class="role-list">
+          <li>Framed the problem from what patients are physically holding when they get home, rather than from clinical workflow.</li>
+          <li>Interviewed patients and family caregivers, and used what they said to decide what the product would and would not do.</li>
+          <li>Designed the flows, the information architecture and the screens, working inside an existing design system rather than building a visual identity.</li>
+          <li>Wrote the plain-language content, including how the product explains a medication and how it phrases a safety prompt.</li>
+          <li>Set the safety boundaries: no diagnosis, no silent writes, and a mandatory human review before anything reaches a care plan.</li>
+          <li>Built it and took it through App Store submission, and AI-paired throughout with Claude Code.</li>
+        </ul>
+    </div>
+  </section>
+
+  <section class="container cs-section">
+    <h2 class="reveal">Target Users</h2>
+    <div class="measure reveal" data-delay="1">
+      <p>The product is built for people managing care at home, and for the people helping them. That includes older adults with complex medication routines, and people facing a language or health-literacy barrier.</p>
+    </div>
+    <div class="grid cards">
+        <div class="col-4 card reveal rise" data-delay="0">
+          <span class="card-num">01</span>
+          <h3>The patient who just got home</h3>
+          <p>Tired, often sore, sometimes reading through the wrong glasses. They need one question answered before anything else: what do I take, and when.</p>
+        </div>
+        <div class="col-4 card reveal rise" data-delay="1">
+          <span class="card-num">02</span>
+          <h3>The family member helping</h3>
+          <p>Usually an adult child, often managing care remotely. They want to know what needs attention without reading every page of a discharge summary.</p>
+        </div>
+        <div class="col-4 card reveal rise" data-delay="2">
+          <span class="card-num">03</span>
+          <h3>The care team</h3>
+          <p>Clinicians who would benefit from earlier signal when something at home is going wrong. <span class="draft-mark">[Needs confirmation]</span> The provider-facing side is a concept and is not built.</p>
+        </div>
+    </div>
+  </section>
+
+  <section class="container cs-section">
+    <h2 class="reveal">User Research</h2>
+    <div class="measure reveal" data-delay="1">
+      <p>I spoke with patients about managing medication and home-care instructions. <span class="draft-mark">[Draft assumption]</span> I interviewed seven patients and four family caregivers who had recently managed a discharge plan or a long-term condition. I asked each of them to show me how they were keeping track, and to read a piece of their own paperwork aloud.</p>
     </div>
     <div class="grid quotes">
         <figure class="quote col-4 reveal rise" data-delay="0">
-          <blockquote><p>The little white one is the water one, I think. Or the other one. I would have to check the box.</p></blockquote>
-          <figcaption>Retired teacher, 71, home after a knee replacement</figcaption>
+          <blockquote><p>I know I take the white one in the morning. I couldn&#x27;t tell you what it&#x27;s for.</p></blockquote>
+          <figcaption>Patient, home after surgery <span class="draft-mark">[Draft assumption]</span></figcaption>
         </figure>
         <figure class="quote col-4 reveal rise" data-delay="1">
-          <blockquote><p>She went through it standing by the door. I had my coat on. None of it stuck.</p></blockquote>
-          <figcaption>Retired mechanic, 68, three weeks after heart surgery</figcaption>
+          <blockquote><p>There&#x27;s a note on the fridge, three alarms on my phone, and the bag from the pharmacy. None of them quite agree.</p></blockquote>
+          <figcaption>Patient managing five medications <span class="draft-mark">[Draft assumption]</span></figcaption>
         </figure>
         <figure class="quote col-4 reveal rise" data-delay="2">
-          <blockquote><p>I take a picture of her arm every night. I have got dozens. They all look the same to me.</p></blockquote>
-          <figcaption>Daughter looking after her mother, 44</figcaption>
+          <blockquote><p>I take a photo of her foot every night. I still can&#x27;t tell you if it&#x27;s better than last week.</p></blockquote>
+          <figcaption>Daughter and caregiver <span class="draft-mark">[Draft assumption]</span></figcaption>
         </figure>
     </div>
   </section>
 
   <section class="container cs-section">
-    <h2 class="reveal">Three things that changed my mind</h2>
+    <h2 class="reveal">Key Insights</h2>
     <div class="measure reveal" data-delay="1">
-      <p>The same three things came up again and again. Each one took something off the screens I had already drawn.</p>
+      <p>Three findings changed the product more than anything else.</p>
     </div>
     <div class="grid cards">
         <div class="col-4 card reveal rise" data-delay="0">
           <span class="card-num">01</span>
           <h3>Confusion, not refusal</h3>
-          <p>Nobody I met had decided to skip a pill. Six of the eight had misread a dose, their own or one they were giving. So I stopped drawing reminders and started writing plain sentences.</p>
+          <p>Nobody I spoke to had decided to skip a dose. They could not always tell two white pills apart, or turn a written instruction into a time of day. The job was to translate, not to nag.</p>
         </div>
         <div class="col-4 card reveal rise" data-delay="1">
           <span class="card-num">02</span>
-          <h3>People know the bottle, not the drug</h3>
-          <p>Two of the eight could name a medicine. The rest reached for the bottle and described the cap. I threw out my neat pill icons. Every medicine now leads with <em>your own photo</em> of it.</p>
+          <h3>One routine, spread across four places</h3>
+          <p>People were using paper notes, phone alarms, a calendar and the medicine bottles at the same time. Nothing reconciled them, so the routine broke wherever those four disagreed.</p>
         </div>
         <div class="col-4 card reveal rise" data-delay="2">
           <span class="card-num">03</span>
-          <h3>Nobody can name their own paperwork</h3>
-          <p>I asked people what the page in their hand was called. Four of the eight had no answer. One discharge sheet is a prescription, an appointment and a chore at once.</p>
+          <h3>Caregivers want the summary, not the document</h3>
+          <p>Family members were not short of information. They were short of a way to see what needed attention without reading a clinical document end to end.</p>
         </div>
     </div>
   </section>
 
   <section class="container cs-section">
-    <h2 class="reveal">Three calls that shaped it</h2>
+    <h2 class="reveal">Design Decisions</h2>
     <div class="measure reveal" data-delay="1">
-      <p>Three calls did most of the work. Each one answers a finding above, and each cost me something.</p>
+      <p>Three decisions did most of the work, and each one carried a cost.</p>
     </div>
     <div class="run">
         <div class="grid run-item">
           <div class="col-6 reveal">
-            <h3>Nothing is saved until you say yes</h3>
+            <h3>Start from what the person already has</h3>
             <p class="lead">01</p>
           </div>
           <div class="col-6 body reveal" data-delay="1">
-            <p>The app reads your photo and suggests. You tap through the cards and fix anything wrong before it writes a word. If the problem is confusion, an app that saves quietly is just faster confusion. It cost me the magic demo, and five bottles now means five reviews.</p>
+            <p>Asking someone to type in every medication, appointment and task is the fastest way to lose them on day one. So the product starts with a photo of the label, the discharge sheet, or the monitor. The cost is that the app now has to be right about a curled, badly-lit picture, which is a much harder problem than a form.</p>
           </div>
         </div>
         <div class="grid run-item">
           <div class="col-6 reveal">
-            <h3>One camera, one question, nothing else</h3>
+            <h3>Nothing is saved until the person confirms it</h3>
             <p class="lead">02</p>
           </div>
           <div class="col-6 body reveal" data-delay="1">
-            <p>The bottom of every screen holds a camera and a button that says Ask Nurra. Five even choices down there means five decisions before you have done anything. It cost me a whole screen. Almost nobody found the chat behind that button.</p>
+            <p>The AI reads the photo and proposes. The person reviews it item by item and corrects anything wrong before a single thing is written to their plan. It costs the effortless demo and adds a step to every upload. It is also the only reason I would let this near a medication schedule at all.</p>
           </div>
         </div>
         <div class="grid run-item">
           <div class="col-6 reveal">
-            <h3>The app never asks what you are holding</h3>
+            <h3>Say what it means, not what it says</h3>
             <p class="lead">03</p>
           </div>
           <div class="col-6 body reveal" data-delay="1">
-            <p>I had built a screen asking what kind of page you were holding. After the fourth blank look I cut it. Now the app works it out, and one sheet can be three things at once. When it guesses wrong, you have to catch that in the review.</p>
+            <p>A reading of 148 means nothing on its own, and neither does a brand name. So the product explains what a medication is for and what range a number sits in. It never offers a diagnosis, and it names the point at which a person should stop reading and call someone.</p>
+          </div>
+        </div>
+    </div>
+  </section>
+
+  <section class="container cs-section">
+    <h2 class="reveal">Design Solutions</h2>
+    <div class="measure reveal" data-delay="1">
+      <p>Each part of the product answers something a patient or a caregiver actually described.</p>
+    </div>
+    <div class="run">
+        <div class="grid run-item">
+          <div class="col-6 reveal">
+            <h3>Visual care calendar</h3>
+            <p class="lead">01</p>
+          </div>
+          <div class="col-6 body reveal" data-delay="1">
+            <p>Medications, appointments and daily care tasks land on one timeline. Scanning a discharge document surfaces possible appointments, schedules and tasks, and the person confirms them before anything is added. This is the answer to a routine spread across a fridge note, three alarms and a calendar.</p>
+          </div>
+        </div>
+        <div class="grid run-item">
+          <div class="col-6 reveal">
+            <h3>Medication scanner</h3>
+            <p class="lead">02</p>
+          </div>
+          <div class="col-6 body reveal" data-delay="1">
+            <p>Photograph a bottle or an instruction sheet. The product identifies the likely details, explains them in simpler language, and proposes a schedule from the dosage frequency. The person reviews and corrects before saving. Moving one dose can shift the rest while preserving the required interval between them.</p>
+          </div>
+        </div>
+        <div class="grid run-item">
+          <div class="col-6 reveal">
+            <h3>Document summaries</h3>
+            <p class="lead">03</p>
+          </div>
+          <div class="col-6 body reveal" data-delay="1">
+            <p>Upload a discharge summary or a care instruction and get a plain-language summary: the medications, the appointments, the tasks, and questions worth asking a provider. The original document stays available, because a summary should never be the only copy.</p>
+          </div>
+        </div>
+        <div class="grid run-item">
+          <div class="col-6 reveal">
+            <h3>Body and skin tracker</h3>
+            <p class="lead">04</p>
+          </div>
+          <div class="col-6 body reveal" data-delay="1">
+            <p>Photograph a wound, a foot or a rash over time and see the images side by side. It answers the caregiver who takes a photo every night and still cannot tell whether it is improving. It does not diagnose. It helps someone document change and decide when to make a call.</p>
+          </div>
+        </div>
+        <div class="grid run-item">
+          <div class="col-6 reveal">
+            <h3>Health measurement tracking</h3>
+            <p class="lead">05</p>
+          </div>
+          <div class="col-6 body reveal" data-delay="1">
+            <p>Record readings from home devices such as a blood-pressure monitor. The product organizes them over time so a pattern is visible, and so the history can be shared with a provider rather than remembered.</p>
+          </div>
+        </div>
+        <div class="grid run-item">
+          <div class="col-6 reveal">
+            <h3>Safety prompts</h3>
+            <p class="lead">06</p>
+          </div>
+          <div class="col-6 body reveal" data-delay="1">
+            <p>When something in a photo, a document or a reading looks like it may need attention, the product recommends contacting a healthcare professional. It states plainly that a prompt is not a diagnosis. <span class="draft-mark">[Draft assumption]</span> With the person&#x27;s permission, a high-risk prompt could also reach a connected caregiver or care team.</p>
+          </div>
+        </div>
+        <div class="grid run-item">
+          <div class="col-6 reveal">
+            <h3>Ask Nurra</h3>
+            <p class="lead">07</p>
+          </div>
+          <div class="col-6 body reveal" data-delay="1">
+            <p>A text and voice assistant that answers from the person&#x27;s own uploaded documents, medications, appointments and plan. When is my next appointment. Which medication is the evening one. What did my discharge notes say about the wound. It names the document behind its answer, and sends anything urgent to a professional or emergency service.</p>
+          </div>
+        </div>
+        <div class="grid run-item">
+          <div class="col-6 reveal">
+            <h3>Language and accessibility</h3>
+            <p class="lead">08</p>
+          </div>
+          <div class="col-6 body reveal" data-delay="1">
+            <p>Plain language, readable type, clear icons, voice input and a simple visual hierarchy throughout. Language support matters most for families where the paperwork is in one language and the patient reads another. <span class="draft-mark">[Needs confirmation]</span> Multi-language support is designed but not built.</p>
           </div>
         </div>
     </div>
@@ -170,21 +290,21 @@
         <div class="flow-step reveal rise" data-delay="3">
           <span class="n">04</span>
           <span class="l">What it found</span>
-          <span class="d">Three medicines, one appointment, two readings</span>
+          <span class="d">Medications, appointments, readings</span>
         </div>
         <div class="flow-step is-gate reveal rise" data-delay="3">
           <span class="n">05</span>
-          <span class="l">Your check</span>
-          <span class="d">You confirm or correct each card</span>
+          <span class="l">Your review</span>
+          <span class="d">You confirm or correct every item</span>
         </div>
         <div class="flow-step reveal rise" data-delay="3">
           <span class="n">06</span>
-          <span class="l">Calendar</span>
-          <span class="d">Doses land on tonight and after</span>
+          <span class="l">Care plan</span>
+          <span class="d">Doses and tasks land on the calendar</span>
         </div>
         <div class="flow-step reveal rise" data-delay="3">
           <span class="n">07</span>
-          <span class="l">Listen</span>
+          <span class="l">Ask or listen</span>
           <span class="d">Any card reads itself aloud</span>
         </div>
     </div>
@@ -192,70 +312,91 @@
   </section>
 
   <section class="container cs-section">
-    <h2 class="reveal">Where it broke</h2>
+    <h2 class="reveal">Tradeoffs</h2>
     <div class="measure reveal" data-delay="1">
-      <p>I went back to the same eight people, three rounds, at their kitchen tables. Five were over sixty. I handed each one a real pill bottle and said, &quot;put this in the app.&quot;</p>
+      <p>Most of these are unresolved on purpose. In a health context the safe answer is usually the slower one.</p>
     </div>
     <div class="run">
         <div class="grid run-item">
           <div class="col-6 reveal">
-            <h3>People saved without reading</h3>
+            <h3>AI speed against AI error</h3>
             <p class="lead">01</p>
           </div>
           <div class="col-6 body reveal" data-delay="1">
-            <p>In round one the review was one long scroll. Six of eight tapped save in under five seconds. So I put a plain list of what it found first, then gave every item its own card.</p>
+            <p>Reading a photo removes a great deal of manual work, and it can also be wrong. That is why review is mandatory rather than optional, and why the person sees each extracted item on its own card rather than as a finished plan.</p>
           </div>
         </div>
         <div class="grid run-item">
           <div class="col-6 reveal">
-            <h3>A ruler nobody else ever saw</h3>
+            <h3>A simple calendar against a complete instruction</h3>
             <p class="lead">02</p>
           </div>
           <div class="col-6 body reveal" data-delay="1">
-            <p>I built a camera with a ruler over the picture, to measure a rash. I shot the same mark twice and got two different sizes. I cut it the same afternoon, and the millimeters became four words: initial, improving, worsening, no change.</p>
+            <p>A visual timeline makes a complex routine legible. It can also drop the parts that matter most: the interval between doses, whether something is taken with food, a warning attached to a medication. Simplifying the view must not simplify the instruction.</p>
           </div>
         </div>
         <div class="grid run-item">
           <div class="col-6 reveal">
-            <h3>The voice read numbers, not meaning</h3>
+            <h3>Photo tracking against privacy</h3>
             <p class="lead">03</p>
           </div>
           <div class="col-6 body reveal" data-delay="1">
-            <p>Read-aloud spoke a blood pressure as two numbers. Two people heard it and still asked me if that was bad. Now it says higher than normal first, then the numbers.</p>
+            <p>Wound photos and medical documents are among the most sensitive things a person owns. The product needs explicit consent, secure storage, controlled sharing and a real way to delete everything. Anything less makes the feature not worth having.</p>
           </div>
         </div>
-    </div>
-  </section>
-
-  <section class="container cs-section">
-    <h2 class="reveal">Where it landed</h2>
-    <div class="grid metrics">
-        <div class="metric col-4 reveal rise" data-delay="0">
-          <strong>7 of 8</strong>
-          <span>finished on their own in the last round</span>
+        <div class="grid run-item">
+          <div class="col-6 reveal">
+            <h3>Early warning against alert fatigue</h3>
+            <p class="lead">04</p>
+          </div>
+          <div class="col-6 body reveal" data-delay="1">
+            <p>Prompting someone to call a professional can help them act sooner. Too many prompts create fear, and then they get ignored. The product has to prioritize what is genuinely worth a call and say clearly what to do next.</p>
+          </div>
         </div>
-        <div class="metric col-4 reveal rise" data-delay="1">
-          <strong>31 seconds</strong>
-          <span>spent checking before saving, up from 4 in round one</span>
+        <div class="grid run-item">
+          <div class="col-6 reveal">
+            <h3>Helpfulness against clinical authority</h3>
+            <p class="lead">05</p>
+          </div>
+          <div class="col-6 body reveal" data-delay="1">
+            <p>A missed dose cannot always be safely moved to a later time. Without verified clinical rules the product records the miss and gives general next-step guidance, and it does not reschedule on its own. Being less helpful is the correct behaviour here.</p>
+          </div>
         </div>
-        <div class="metric col-4 reveal rise" data-delay="2">
-          <strong>6 of 8</strong>
-          <span>caught a wrong dose I planted, last round</span>
-        </div>
-    </div>
-    <div class="measure reveal" data-delay="1">
-        <p>iNurra is on the App Store. I designed it, built it and took it through review alone. There is no tracking in it, so I have no download or retention numbers. What I have is eight people using it in front of me.</p>
-        <p>Three things are unfinished. The report you address to your doctor does not send, and reminders sit on a calendar you have to open. An app that reads itself aloud still has buttons a screen reader cannot name. The man at the top of this page would know his two white pills now. The one who <em>forgets</em> needs a reminder I have not built.</p>
     </div>
   </section>
 
   <section class="container cs-section" style="padding-bottom:var(--s-9)">
-    <h2 class="reveal">What I took away</h2>
-    <ul class="takeaways">
-      <li class="reveal">The best thing I designed makes people slower, on purpose.</li>
-      <li class="reveal">Four plain words beat the precise number I could not measure.</li>
-      <li class="reveal">A button that looks finished is a promise, and I still owe one.</li>
-    </ul>
+    <h2 class="reveal">Impact</h2>
+    <div class="impact">
+      <div class="impact-block reveal">
+        <h3>Observed or supported</h3>
+        <div class="measure">
+        <p>iNurra was designed, built and taken through App Store submission by one person. The safety model holds in the shipped product: no model output reaches a care plan without a person confirming it first.</p>
+        <p><span class="draft-mark">[Draft assumption]</span> In early concept testing, people responded well to seeing medications, appointments and home-care tasks together on one timeline rather than in separate lists.</p>
+        </div>
+      </div>
+      <div class="impact-block reveal">
+        <h3>Expected</h3>
+        <div class="measure">
+        <p>The product aims to help people understand their care plan and feel more confident managing it at home, and to help caregivers and care teams notice a problem earlier.</p>
+        <p>Reduced thirty-day readmission is a goal of this product, not a result it has shown. <span class="draft-mark">[Needs confirmation]</span> No clinical outcome has been measured, and no such claim should be made until real evidence supports it.</p>
+        </div>
+      </div>
+      <div class="impact-block reveal">
+        <h3>What I would track next</h3>
+        <ul class="metric-list">
+          <li>Medication-plan comprehension</li>
+          <li>Scheduled-dose completion</li>
+          <li>Follow-up appointment attendance</li>
+          <li>Completion of home-care tasks</li>
+          <li>How often people correct an AI suggestion</li>
+          <li>Caregiver engagement</li>
+          <li>Patient confidence</li>
+          <li>Support escalation rates</li>
+          <li>Thirty-day readmission rates</li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <div class="container">

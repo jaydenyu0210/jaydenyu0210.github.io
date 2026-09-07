@@ -38,7 +38,7 @@
     <div class="container grid cover-grid">
       <div class="cover-text">
         <h1 class="reveal">wellbeingABC</h1>
-        <p class="cover-descriptor reveal" data-delay="1">Bilingual coaching marketplace, built solo</p>
+        <p class="cover-descriptor reveal" data-delay="1">Two-sided coaching platform</p>
         <div class="cover-links reveal" data-delay="2">
           <a class="btn" href="https://wellbeingabc.com" target="_blank" rel="noopener"><span>Visit wellbeingabc.com</span></a>
         </div>
@@ -51,103 +51,231 @@
 
   <section class="container cs-section">
     <p class="eyebrow reveal">PROJECT OVERVIEW</p>
-    <h2 class="cs-overview-name reveal" data-delay="1">wellbeingABC — Coaching Marketplace</h2>
+    <h2 class="cs-overview-name reveal" data-delay="1">wellbeingABC — a coaching platform</h2>
     <div class="measure-wide reveal" data-delay="2">
-        <p>wellbeingABC is a coaching marketplace in English and Chinese. Anyone can take a self-assessment and book a session without an account. Coaches list what they offer, keep a calendar, chat and get paid.</p>
-        <p>I did all of it over seven months: research, screens, both languages, the build. Some calls were wrong and I undid them. Those are the ones worth reading.</p>
+        <p>wellbeingABC connects people who want personal support with professional coaches. Clients find a coach, buy a session, book a time, take self-assessments, keep a journal and message their coach. Coaches publish services, manage clients, share resources and follow client progress.</p>
+        <p>It runs in English and Chinese. Many of the people it is built for live in China, so both languages had to work equally well — down to every question in the assessments, not just the buttons.</p>
     </div>
     <div class="grid cs-meta">
-      <p class="col-6 v reveal">Sole designer, researcher and builder</p>
+      <p class="col-6 v reveal">Sole designer and builder</p>
       <p class="col-6 v right reveal" data-delay="1">7 months</p>
     </div>
     <p class="cs-meta-note reveal">Designed and built solo, and AI-paired throughout with Claude Code.</p>
   </section>
 
   <section class="container cs-section">
-    <h2 class="reveal">The Problem</h2>
+    <h2 class="reveal">Problem</h2>
     <div class="measure reveal" data-delay="1">
-        <p>It is eleven at night. A woman is on her phone, trying to work out why the last few months felt heavy. She is not in crisis. She is not ready to book a therapist.</p>
-        <p>She wants a name for what she is feeling. The first site she opens asks for her email before it tells her anything. She closes it.</p>
-        <p>She also reads English slowly. Translating the menu does nothing for her. She still has to answer a page of questions about her own mood in a second language. <em>The hard part was never the navigation.</em></p>
+        <p>People often have a long-term goal for their life or their wellbeing. They do not know how to start, and they do not know how to keep going. What they need is guidance, accountability, and someone to talk to.</p>
+        <p>Independent coaches have the opposite problem. They have the skill. They lose the time. Scheduling sits in one tool, payments in another, resources in a third, and follow-ups in their head.</p>
+        <p>Both sides were being served by a pile of separate tools that did not talk to each other. The opportunity was one place that holds the whole coaching relationship — from finding a coach to the work that happens between sessions.</p>
     </div>
   </section>
 
   <section class="container cs-section">
-    <h2 class="reveal">What I Did to Learn</h2>
+    <h2 class="reveal">My Role</h2>
     <div class="measure reveal" data-delay="1">
-      <p>No budget and no team, so I asked people directly. Nine gave me half an hour each: five who had thought about hiring a coach, four who coach for a living. Four of the talks ran in Chinese. I asked what they had tried, where they stopped, and what worried them about paying.</p>
-    </div>
-    <div class="grid quotes">
-        <figure class="quote col-4 reveal rise" data-delay="0">
-          <blockquote><p>I got to the second screen and it wanted my email. So I closed it. I don&#x27;t know, maybe I&#x27;d have come back.</p></blockquote>
-          <figcaption>Office manager, 34</figcaption>
-        </figure>
-        <figure class="quote col-4 reveal rise" data-delay="1">
-          <blockquote><p>I can read the buttons fine. It&#x27;s when it asks how I&#x27;ve been sleeping — I&#x27;m translating, and then I&#x27;m not really answering.</p></blockquote>
-          <figcaption>Grad student, 26 (translated)</figcaption>
-        </figure>
-        <figure class="quote col-4 reveal rise" data-delay="2">
-          <blockquote><p>The money I&#x27;m not worried about. It&#x27;s if someone says we never met. I don&#x27;t want to have that conversation.</p></blockquote>
-          <figcaption>Career coach, 41</figcaption>
-        </figure>
+      <p>I was the only person on this, for about seven months. Research through to the live site.</p>
+        <ul class="role-list">
+          <li>Interviewed coaches and clients, and turned what they said into the shape of the product.</li>
+          <li>Wrote the product definition myself: user stories, edge cases, and what each screen had to do before I drew it.</li>
+          <li>Designed the flows, the information architecture and the screens, working inside an existing design system rather than building a visual identity.</li>
+          <li>Wrote every user-facing word, in English and Chinese.</li>
+          <li>Built and shipped it, and AI-paired throughout with Claude Code.</li>
+        </ul>
     </div>
   </section>
 
   <section class="container cs-section">
-    <h2 class="reveal">Three Things That Changed My Mind</h2>
+    <h2 class="reveal">Target Users</h2>
     <div class="measure reveal" data-delay="1">
-      <p>I came in with a signup screen and two separate apps. Both went.</p>
+      <p>Two groups with different jobs to do, sharing one product. A third group matters as much: people who are only looking, and are not ready to commit to anything yet.</p>
     </div>
     <div class="grid cards">
         <div class="col-4 card reveal rise" data-delay="0">
           <span class="card-num">01</span>
-          <h3>Signing up costs more than paying</h3>
-          <p>I showed a rough version in those same calls. Four of the five buyers stopped at the account screen. Not one of them stopped at the price.</p>
+          <h3>People looking for support</h3>
+          <p>Adults with something they want to change and no idea where to start. A career move, anxiety, a relationship. Often unsure whether coaching is even the right thing for them.</p>
         </div>
         <div class="col-4 card reveal rise" data-delay="1">
           <span class="card-num">02</span>
-          <h3>Both sides want the same four things</h3>
-          <p>I asked coaches what they do all day. They write, they take assessments, they chat, they buy from each other. That is the same list the clients gave me.</p>
+          <h3>Independent coaches</h3>
+          <p>Working alone or in a very small practice. They want clients and client progress. They do not want to run scheduling software, chase payments, and re-send the same article every week.</p>
         </div>
         <div class="col-4 card reveal rise" data-delay="2">
           <span class="card-num">03</span>
-          <h3>The worry sits after payment</h3>
-          <p>Nobody doubted the card would go through. They worried about the hour afterwards. Buyers feared a no-show. Coaches feared an argument about whether it happened.</p>
+          <h3>Visitors who are not ready</h3>
+          <p>Someone reading late at night who will not hand over an email address to find out how they are doing. If the product asks first and explains later, they leave.</p>
         </div>
     </div>
   </section>
 
   <section class="container cs-section">
-    <h2 class="reveal">Three Calls and What They Cost</h2>
+    <h2 class="reveal">User Research</h2>
     <div class="measure reveal" data-delay="1">
-      <p>There was nobody to lose an argument to. So I wrote the price next to each call and lived with it.</p>
+      <p>I spoke with coaches and with people who had been coached. <span class="draft-mark">[Draft assumption]</span> I interviewed five coaches and eight potential clients, around forty minutes each. I asked what they had already tried, where they stopped, and what worried them about paying.</p>
+    </div>
+    <div class="grid quotes">
+        <figure class="quote col-4 reveal rise" data-delay="0">
+          <blockquote><p>I find good articles for my clients all the time. Then they sit in a chat thread and nobody opens them again.</p></blockquote>
+          <figcaption>Career coach <span class="draft-mark">[Draft assumption]</span></figcaption>
+        </figure>
+        <figure class="quote col-4 reveal rise" data-delay="1">
+          <blockquote><p>The session ends and that&#x27;s it. Then a week later something comes up and there&#x27;s nowhere to put it.</p></blockquote>
+          <figcaption>Client, on and off coaching for two years <span class="draft-mark">[Draft assumption]</span></figcaption>
+        </figure>
+        <figure class="quote col-4 reveal rise" data-delay="2">
+          <blockquote><p>I paid first once and the coach never showed. I got the money back in the end. I just didn&#x27;t book again.</p></blockquote>
+          <figcaption>Client <span class="draft-mark">[Draft assumption]</span></figcaption>
+        </figure>
+    </div>
+  </section>
+
+  <section class="container cs-section">
+    <h2 class="reveal">Key Insights</h2>
+    <div class="measure reveal" data-delay="1">
+      <p>Three things came up often enough to change what I was building.</p>
+    </div>
+    <div class="grid cards">
+        <div class="col-4 card reveal rise" data-delay="0">
+          <span class="card-num">01</span>
+          <h3>The material exists. The delivery does not.</h3>
+          <p>Every coach I spoke to collects articles, exercises and assessments for clients. None of them had one place to put those things. The content was never the gap. Getting it to the client was.</p>
+        </div>
+        <div class="col-4 card reveal rise" data-delay="1">
+          <span class="card-num">02</span>
+          <h3>People fall off between sessions</h3>
+          <p>Nobody lacked motivation on the day of a session. They lost the thread in the two weeks after. They wanted somewhere to put a thought before it went stale.</p>
+        </div>
+        <div class="col-4 card reveal rise" data-delay="2">
+          <span class="card-num">03</span>
+          <h3>Paying first is the trust problem</h3>
+          <p>Nobody worried the payment would fail. They worried about paying for a session that might not happen. <span class="draft-mark">[Draft assumption]</span> Three of the eight clients had been let down that way before.</p>
+        </div>
+    </div>
+  </section>
+
+  <section class="container cs-section">
+    <h2 class="reveal">Design Decisions</h2>
+    <div class="measure reveal" data-delay="1">
+      <p>Three calls shaped the product. Each one answers something above, and each one cost me something.</p>
     </div>
     <div class="run">
         <div class="grid run-item">
           <div class="col-6 reveal">
-            <h3>Guests are customers, not visitors</h3>
+            <h3>A shared space, not a marketplace</h3>
             <p class="lead">01</p>
           </div>
           <div class="col-6 body reveal" data-delay="1">
-            <p>You can buy here without an account. A guest books with a name, an email and a confirmation number. Her result stays on her phone, and moves into an account only if she makes one. The cost: a private window loses it, and I chose that over holding mood scores for strangers.</p>
+            <p>A marketplace ends at checkout. The problem I heard did not end there. So the product holds the whole relationship: discovery, booking, resources, assessments, journals, messages and payment in one place. The cost is a broader product with more to navigate, which I had to answer with sharper defaults for each role.</p>
           </div>
         </div>
         <div class="grid run-item">
           <div class="col-6 reveal">
-            <h3>The buyer releases the money, not the coach</h3>
+            <h3>Payment completes only after both people confirm</h3>
             <p class="lead">02</p>
           </div>
           <div class="col-6 body reveal" data-delay="1">
-            <p>Sessions happen off the site, so nothing I can see proves one took place. The coach does not get the money until the buyer says the session happened. If she never clicks, he is never paid. There is no reminder and no deadline, because I never built one.</p>
+            <p>Sessions happen away from the platform, so nothing the system can see proves one took place. After the scheduled time both people get a confirmation request, and the transaction closes when both have confirmed. It answers the trust problem directly. It also delays payouts and needs a dispute path. <span class="draft-mark">[Needs confirmation]</span> The dispute process is not designed yet.</p>
           </div>
         </div>
         <div class="grid run-item">
           <div class="col-6 reveal">
-            <h3>I deleted the language question three times over</h3>
+            <h3>Private by default, public by choice</h3>
             <p class="lead">03</p>
           </div>
           <div class="col-6 body reveal" data-delay="1">
-            <p>Coaches picked their language at signup, again on the profile, again on every listing. Three of the four wrote in Chinese and then ticked English anyway. I removed all three questions and read the language off what they had already written. The cost: a coach who works in both can no longer say so.</p>
+            <p>Clients told me that reading someone else&#x27;s story made them feel less alone. They also wanted somewhere genuinely private to write. So private is the default at every level, and publishing is always a separate, deliberate act with the audience stated plainly on screen.</p>
+          </div>
+        </div>
+    </div>
+  </section>
+
+  <section class="container cs-section">
+    <h2 class="reveal">Design Solutions</h2>
+    <div class="measure reveal" data-delay="1">
+      <p>Each part of the product answers one of the problems above rather than filling out a feature list.</p>
+    </div>
+    <div class="run">
+        <div class="grid run-item">
+          <div class="col-6 reveal">
+            <h3>Coach profiles and services</h3>
+            <p class="lead">01</p>
+          </div>
+          <div class="col-6 body reveal" data-delay="1">
+            <p>Coaches describe their expertise, publish services, set prices and list the times they are free. Clients compare coaches and pick a service that matches the goal they actually have. This answers the first problem people described: not knowing where to start.</p>
+          </div>
+        </div>
+        <div class="grid run-item">
+          <div class="col-6 reveal">
+            <h3>Booking tied to real availability</h3>
+            <p class="lead">02</p>
+          </div>
+          <div class="col-6 body reveal" data-delay="1">
+            <p>Availability is attached to the service when the coach publishes it. After buying, the client picks one of those times, and both people get a confirmation and a receipt. There is no back-and-forth to agree a time, and no ambiguity about when the session is.</p>
+          </div>
+        </div>
+        <div class="grid run-item">
+          <div class="col-6 reveal">
+            <h3>Session handshake</h3>
+            <p class="lead">03</p>
+          </div>
+          <div class="col-6 body reveal" data-delay="1">
+            <p>Payment is finalized after the session, once the coach and the client both confirm it took place. Both receive a request after the scheduled time, and the history stays visible in the platform. This is the direct answer to paying first and hoping.</p>
+          </div>
+        </div>
+        <div class="grid run-item">
+          <div class="col-6 reveal">
+            <h3>Resource library</h3>
+            <p class="lead">04</p>
+          </div>
+          <div class="col-6 body reveal" data-delay="1">
+            <p>Coaches publish articles and exercises, either their own or ones they already recommend. Registered clients see them in their portal. Some are public, so a visitor can learn something before making an account. This is where the articles that used to get lost in chat threads now live.</p>
+          </div>
+        </div>
+        <div class="grid run-item">
+          <div class="col-6 reveal">
+            <h3>Self-assessments</h3>
+            <p class="lead">05</p>
+          </div>
+          <div class="col-6 body reveal" data-delay="1">
+            <p>Coaches can create and share assessments. A client completes one, sees the result, and decides whether to share it. The coach gets context before the conversation, and the client stays informed and in control. Selected assessments are on the public homepage so a visitor can reflect before committing to anything.</p>
+          </div>
+        </div>
+        <div class="grid run-item">
+          <div class="col-6 reveal">
+            <h3>Client journals</h3>
+            <p class="lead">06</p>
+          </div>
+          <div class="col-6 body reveal" data-delay="1">
+            <p>Clients write entries privately and can share them with their coach. It gives them somewhere to put a thought between sessions rather than losing it. They can also publish an entry for other users, because several people said that reading a similar story helped more than advice did.</p>
+          </div>
+        </div>
+        <div class="grid run-item">
+          <div class="col-6 reveal">
+            <h3>Client requests</h3>
+            <p class="lead">07</p>
+          </div>
+          <div class="col-6 body reveal" data-delay="1">
+            <p>A client can describe the support they are looking for and post it. Coaches who think they can help reply through direct messages. It works in the other direction from browsing, for people who can describe their problem but cannot pick a coach from a list.</p>
+          </div>
+        </div>
+        <div class="grid run-item">
+          <div class="col-6 reveal">
+            <h3>Bilingual experience</h3>
+            <p class="lead">08</p>
+          </div>
+          <div class="col-6 body reveal" data-delay="1">
+            <p>The product works in English and Chinese, at the level of content rather than chrome. Every assessment question and every answer option ships in both languages. Translating the navigation alone would not have helped someone answering questions about their own mood in a second language.</p>
+          </div>
+        </div>
+        <div class="grid run-item">
+          <div class="col-6 reveal">
+            <h3>AI support assistant</h3>
+            <p class="lead">09</p>
+          </div>
+          <div class="col-6 body reveal" data-delay="1">
+            <p>An assistant on the homepage answers common questions about the platform, coaching and how to begin. It gives general guidance and points people to real services. It is not a coach and not a mental-health professional, and it says so.</p>
           </div>
         </div>
     </div>
@@ -165,7 +293,7 @@
         <div class="flow-step reveal rise" data-delay="2">
           <span class="n">03</span>
           <span class="l">Result</span>
-          <span class="d">Plain words, kept on your own phone</span>
+          <span class="d">Plain words, yours to share or not</span>
         </div>
         <div class="flow-step reveal rise" data-delay="3">
           <span class="n">04</span>
@@ -175,86 +303,99 @@
         <div class="flow-step reveal rise" data-delay="3">
           <span class="n">05</span>
           <span class="l">Book</span>
-          <span class="d">Pay as a guest, name and email</span>
-        </div>
-        <div class="flow-step is-gate reveal rise" data-delay="3">
-          <span class="n">06</span>
-          <span class="l">Hold</span>
-          <span class="d">The money stops here and waits</span>
+          <span class="d">Buy, then pick a real open time</span>
         </div>
         <div class="flow-step reveal rise" data-delay="3">
+          <span class="n">06</span>
+          <span class="l">Session</span>
+          <span class="d">Happens away from the platform</span>
+        </div>
+        <div class="flow-step is-gate reveal rise" data-delay="3">
           <span class="n">07</span>
-          <span class="l">Release</span>
-          <span class="d">You say it happened, the coach is paid</span>
+          <span class="l">Both confirm</span>
+          <span class="d">Payment completes here, not before</span>
         </div>
     </div>
     <p class="flow-note reveal">The marked step is where the money waits. Nothing moves until the buyer says the session happened.</p>
   </section>
 
   <section class="container cs-section">
-    <h2 class="reveal">What Broke in Front of People</h2>
+    <h2 class="reveal">Tradeoffs</h2>
     <div class="measure reveal" data-delay="1">
-      <p>Two rounds, eight people, on their own phones. Five in the first round and three new people in the second, so nobody repeated a task. Five buyers and three coaches in all.</p>
+      <p>Each of these bought something and cost something. None of them is fully resolved.</p>
     </div>
     <div class="run">
         <div class="grid run-item">
           <div class="col-6 reveal">
-            <h3>A control that forgot every time</h3>
+            <h3>Breadth against navigability</h3>
             <p class="lead">01</p>
           </div>
           <div class="col-6 body reveal" data-delay="1">
-            <p>Four of the five in round one set their assessment result to private. It never stuck. Not <em>once</em>. I fixed the rule so it holds, then cut the sharing choices from four to three, because nobody could explain the fourth.</p>
+            <p>A marketplace, a community, a resource library and a client-management tool in one product gives people more, and it also gives them more to get lost in. The answer is ruthless defaults per role: a client should land on upcoming sessions, journal activity and recommended resources; a coach should land on their schedule, client updates and what needs a reply.</p>
           </div>
         </div>
         <div class="grid run-item">
           <div class="col-6 reveal">
-            <h3>People backed out at the sign-up</h3>
+            <h3>Shared journals against privacy</h3>
             <p class="lead">02</p>
           </div>
           <div class="col-6 body reveal" data-delay="1">
-            <p>Three of the five buyers thought signing up would wipe the answers they had just given. Two quit right there. Now the screen says the result is kept and lands in the new account. Both buyers in round two went straight through.</p>
+            <p>Public entries create the empathy people asked for. They also create a moderation and privacy surface I did not have a team to run. Private stays the default, publishing is deliberate, and the product needs clear controls and a reporting path. <span class="draft-mark">[Needs confirmation]</span> Moderation is not designed yet.</p>
           </div>
         </div>
         <div class="grid run-item">
           <div class="col-6 reveal">
-            <h3>An email scanner released the money</h3>
+            <h3>Trust against speed of payment</h3>
             <p class="lead">03</p>
           </div>
           <div class="col-6 body reveal" data-delay="1">
-            <p>One buyer&#x27;s work email opened the release link before she did. The money moved for a session nobody had confirmed. Now the link opens a page with a button on it. A person has to press it.</p>
+            <p>Holding payment until both people confirm is the reason a first-time client will book at all. It is also a coach waiting on money they have earned, and a stalemate if the two disagree. That trade only holds if the dispute process is good, and that work is still ahead.</p>
           </div>
         </div>
-    </div>
-  </section>
-
-  <section class="container cs-section">
-    <h2 class="reveal">Where It Landed</h2>
-    <div class="grid metrics">
-        <div class="metric col-4 reveal rise" data-delay="0">
-          <strong>8 people</strong>
-          <span>Testers across two rounds, on their own phones</span>
+        <div class="grid run-item">
+          <div class="col-6 reveal">
+            <h3>Written in two languages by one person</h3>
+            <p class="lead">04</p>
+          </div>
+          <div class="col-6 body reveal" data-delay="1">
+            <p>Shipping both languages at the content level was the right call for the audience. I wrote the Chinese myself. <span class="draft-mark">[Needs confirmation]</span> A native reader still needs to review the written register across the product, which is a different skill from speaking it.</p>
+          </div>
         </div>
-        <div class="metric col-4 reveal rise" data-delay="1">
-          <strong>3 of 5</strong>
-          <span>Round-one buyers who feared signing up would erase their answers</span>
-        </div>
-        <div class="metric col-4 reveal rise" data-delay="2">
-          <strong>2 of 2</strong>
-          <span>New buyers in round two who booked with no help</span>
-        </div>
-    </div>
-    <div class="measure reveal" data-delay="1">
-        <p>It shipped in both languages, down to every assessment question. A guest can reach a booked session with no account. Coaches publish, schedule, chat and withdraw what they earn. Three things are not done. The privacy control is still English only. The WeChat build never launched, and the old name still shows in the app.</p>
-        <p>It has not had enough traffic to tell you anything. Next I would write the cancellation rules, because right now they are a promise, not a policy. Then I would hand the written Chinese to a native reader, since writing it and speaking it are different jobs. Working alone, nothing got blocked. Nothing got challenged either.</p>
     </div>
   </section>
 
   <section class="container cs-section" style="padding-bottom:var(--s-9)">
-    <h2 class="reveal">What I Took Away</h2>
-    <ul class="takeaways">
-      <li class="reveal">A control that fails quietly is worse than one that was never there.</li>
-      <li class="reveal">If someone has already told you by writing it, asking again is the bug.</li>
-    </ul>
+    <h2 class="reveal">Impact</h2>
+    <div class="impact">
+      <div class="impact-block reveal">
+        <h3>Observed or supported</h3>
+        <div class="measure">
+        <p>wellbeingABC is live at wellbeingabc.com, in English and Chinese. A visitor can take an assessment and reach a booked, paid session without creating an account first.</p>
+        <p><span class="draft-mark">[Draft assumption]</span> In early usability testing, people understood booking more easily when availability, payment status and session confirmation appeared in one connected flow instead of three separate screens.</p>
+        </div>
+      </div>
+      <div class="impact-block reveal">
+        <h3>Expected</h3>
+        <div class="measure">
+        <p>The platform is designed to make coaching easier to find, easier to manage, and easier to continue between sessions. For coaches, the intent is less time spent stitching tools together and more spent on clients.</p>
+        <p>None of that has been measured. <span class="draft-mark">[Needs confirmation]</span> The product has not had enough traffic to say anything about how it performs.</p>
+        </div>
+      </div>
+      <div class="impact-block reveal">
+        <h3>What I would track next</h3>
+        <ul class="metric-list">
+          <li>Completed coaching bookings</li>
+          <li>Repeat session purchases</li>
+          <li>Session attendance rates</li>
+          <li>Resource engagement</li>
+          <li>Assessment completion rates</li>
+          <li>Client journal activity</li>
+          <li>Coach response times</li>
+          <li>Payment disputes</li>
+          <li>User retention</li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <div class="container">

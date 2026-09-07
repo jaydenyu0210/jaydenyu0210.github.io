@@ -526,6 +526,44 @@ em, i { font-style: italic; }
   font-size: var(--t-body); color: var(--muted-strong);
 }
 
+/* draft markers — deliberately visible so they are easy to find and strip */
+.draft-mark {
+  font-size: 0.85em;
+  color: var(--accent-text);
+  border-bottom: 1px dotted currentColor;
+  white-space: nowrap;
+}
+
+/* my-role and future-metrics lists */
+.role-list, .metric-list { margin-top: var(--s-4); }
+.role-list li, .metric-list li {
+  position: relative;
+  padding-left: var(--s-4);
+  font-size: var(--t-body-sm); line-height: 27px;
+}
+.role-list li + li, .metric-list li + li { margin-top: var(--s-2); }
+.role-list li::before, .metric-list li::before {
+  content: ""; position: absolute; left: 0; top: 12px;
+  width: 6px; height: 1px; background: var(--ink);
+}
+
+/* impact, split three ways */
+.impact { margin-top: var(--s-7); }
+.impact-block { padding-top: var(--s-6); border-top: 1px solid var(--rule); }
+.impact-block + .impact-block { margin-top: var(--s-7); }
+.impact-block h3 {
+  font-size: var(--t-heading); font-weight: 600; line-height: 1.3;
+  margin-bottom: var(--s-3);
+}
+.impact-block p { font-size: var(--t-body-sm); line-height: 27px; }
+.impact-block p + p { margin-top: var(--s-3); }
+.impact-block .metric-list { columns: 2; column-gap: var(--s-8); margin-top: var(--s-3); }
+.impact-block .metric-list li { break-inside: avoid; }
+
+@media (max-width: 767px) {
+  .impact-block .metric-list { columns: 1; }
+}
+
 /* research quotes — no card, no quote mark, just a rule and a voice */
 .quotes { margin-top: var(--s-7); }
 .quote { margin: 0; padding-top: var(--s-4); border-top: 1px solid var(--rule); }
